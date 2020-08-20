@@ -33,18 +33,15 @@ const [query, setQuery] = useState('vegetarian')
     }
   return (
     <div className="App">
-    <div className="navbar">
-    <Navbar/>
-     <form onSubmit={getSearch} className = "search-form">
-      <input className = "search-bar" type ="text" value={search} onChange={updateSearch}/>
-      <button type="submit" className = "search-button"> Search </button>
-     </form>
-     <button className="favoritsBtn">My Favorites</button>
-     </div>
+    <Navbar
+        getSearch = {getSearch}
+        search = {search}
+        updateSearch = {updateSearch}/>
+
       <div className="recipes">
-     {recipes.map(recipe=>(
-       <Recipe
-                key={recipe.recipe.label}
+     {recipes.map((recipe,index)=>(
+        <Recipe
+                key={'Recipe' + index}
                 title={recipe.recipe.label}
                 calories= {recipe.recipe.calories}
                 image= {recipe.recipe.image}
