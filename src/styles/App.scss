@@ -1,0 +1,21 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+@import 'navbar';
+@import 'ingredient';
+
+
+.App {
+min-height: 100vh;
+background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);}
+
+
+
+.recipes{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

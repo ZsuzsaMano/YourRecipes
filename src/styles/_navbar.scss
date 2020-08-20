@@ -1,0 +1,35 @@
+//main: App.scss
+
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em;
+}
+
+.bookmarksBtn, .favoritsBtn{
+  border: none;
+  flex: 1 1 10rem;
+  padding: 1em;
+}
+
+.search-form{
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 3 1 40rem;
+}
+
+.search-bar{
+  width: 50%;
+  border:none;
+  padding: 1em;
+
+}
+
+.search-button{
+  background: #f1c3cb;
+  border:none;
+  padding: 1em 2em;
+}
