@@ -1,1 +1,9 @@
 //main: App.scss
+
+.toggleFavorite{
+  cursor: pointer;
+}
+
+.toggleFavorite-active{
+  fill:yellow;
+}
