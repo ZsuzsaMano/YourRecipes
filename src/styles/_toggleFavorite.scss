@@ -2,8 +2,11 @@
 
 .toggleFavorite{
   cursor: pointer;
+  fill:grey;
 }
 
 .toggleFavorite-active{
-  fill:yellow;
+  fill:rgb(241, 218, 10);
+  stroke: rgb(217, 108, 8);
+  stroke-width: 2px;
 }

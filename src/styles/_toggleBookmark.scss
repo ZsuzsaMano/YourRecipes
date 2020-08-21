@@ -2,8 +2,11 @@
 
 .toggleBookmark{
   cursor: pointer;
+  fill:grey;
 }
 
 .toggleBookmark-active{
-  fill:blue;
+  fill:rgb(10, 60, 156);
+  stroke: #646464;
+  stroke-width: 1px;
 }
