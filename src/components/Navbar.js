@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Navbar = ({getSearch, search, updateSearch}) =>{
-  return(
+const Navbar = ({ getSearch, search, updateSearch }) => {
+  return (
     <div className="navbar">
     <button className="bookmarksBtn">My Bookmarks</button>
      <form onSubmit={getSearch} className = "search-form">
@@ -11,8 +11,7 @@ const Navbar = ({getSearch, search, updateSearch}) =>{
      <button className="favoritsBtn">My Favorites</button>
      </div>
 
-  )
-}
-
+  );
+};
 
 export default Navbar;
