@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+@mixin flex($justfy, $align, $direction){
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $justfy;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
 @import 'navbar';
 @import 'recipes';
 @import 'ingredient';
