@@ -1,8 +1,5 @@
 //main: App.scss
 
 .recipes{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+@include flex(space-around, center, column);
 }
