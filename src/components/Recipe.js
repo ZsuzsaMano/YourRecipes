@@ -4,7 +4,7 @@ import ToggleFavorite from './ToggleFavorite'
 import ToggleBookmark from './ToggleBookmark'
 import style from '../styles/recipe.module.css';
 
-const Recipe = ({title, calories, image, ingredients}) => {
+const Recipe = ({title, calories, image, ingredients, key}) => {
   return(
   <div className={style.recipe}>
   <div className={style.header}>
@@ -19,7 +19,8 @@ const Recipe = ({title, calories, image, ingredients}) => {
   </aside>
   </section>
 <Ingredient
-ingredients={ingredients}/>
+ingredients={ingredients}
+/>
   </div>
 );
 };
