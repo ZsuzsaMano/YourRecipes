@@ -6,17 +6,33 @@ import style from '../styles/recipe.module.css';
 
 const Recipe = ({title, calories, image, ingredients}) => {
   return(
-  <div className={style.recipe}>
-  <div className={style.header}>
-    <h1 className={style.title} >{title}</h1>
+  <div className ={style.recipe}>
+  <div className ={style.header}>
+
     <ToggleFavorite/>
    <ToggleBookmark/>
    </div>
-    <section className={style.about}>
-  <img src={image} alt="{title}" className={style.image} />
-  <aside className={style.nutrition}>
-  <p>Calories per serving:{' '+Math.floor(calories)}</p>
-  </aside>
+    <section className ={style.about}>
+    <div className ={style.recipe__fotos}>
+  <div className ={style.flip_box}>
+<div className ={style.flip_box__inner}>
+<div className ={style.flip_box__front}>
+<img src={image} alt="{title}" className ={style.image} />
+</div>
+<div className ={style.flip_box__back}>
+    <h2 className ={style.title} >{title}</h2>
+    <aside className ={style.nutrition}>
+    <p>Calories per serving:{' '+Math.floor(calories)}</p>
+    </aside>
+<p>Click to view recipe:
+</p>
+<a href="" target="_blank">Recipe</a>
+</div>
+</div>
+</div>
+</div>
+
+
   </section>
 <Ingredient
 ingredients={ingredients}/>
