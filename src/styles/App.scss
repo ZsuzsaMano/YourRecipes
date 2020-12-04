@@ -16,9 +16,12 @@
 @import 'recipes';
 @import 'ingredient';
 @import 'bookmarkFavorite';
+@import 'flipBox';
 
 
-
+img{
+  border-radius:5px;
+}
 
 .App {
 min-height: 100vh;
