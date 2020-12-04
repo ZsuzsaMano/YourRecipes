@@ -8,7 +8,7 @@ import style from '../styles/recipe.module.css';
 
 const Recipe = ({
   title,
-  calories,
+  servings,
   image,
   ingredients,
   key
@@ -68,8 +68,8 @@ const Recipe = ({
     } >
     <
     p >
-    Calories per serving: {
-      ' ' + Math.floor(calories)
+    Servings: {
+      servings
     } <
     /p> < /
     aside > <
@@ -92,8 +92,8 @@ const Recipe = ({
     setShowIngredients = {
       setShowIngredients
     }
-    / > <
-    /div > 
+    / > < /
+    div >
 
   );
 };
