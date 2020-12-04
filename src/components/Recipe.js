@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Ingredient from './Ingredient';
 import ToggleFavorite from './ToggleFavorite'
 import ToggleBookmark from './ToggleBookmark'
 import style from '../styles/recipe.module.css';
 
 const Recipe = ({title, calories, image, ingredients, key}) => {
+
+  const [showIngredients, setShowIngredients] = useState(false)
+
   return(
   <div className ={style.recipe}>
   <div className ={style.header}>
@@ -12,7 +15,6 @@ const Recipe = ({title, calories, image, ingredients, key}) => {
 
    </div>
     <section className ={style.about}>
-
     <div className ={style.recipe__fotos}>
   <div className ={style.flip_box}>
 <div className ={style.flip_box__inner}>
@@ -28,9 +30,8 @@ const Recipe = ({title, calories, image, ingredients, key}) => {
     <aside className ={style.nutrition}>
     <p>Calories per serving:{' '+Math.floor(calories)}</p>
     </aside>
-<p>Click to view recipe:
-</p>
-<a href="" target="_blank">Recipe</a>
+<button className = "toggleIngredient" onClick={()=>setShowIngredients(!showIngredients)}>Ingredients</button>
+<button className = "goToRecipe">Recipes</button>
 </div>
 </div>
 </div>
@@ -40,6 +41,8 @@ const Recipe = ({title, calories, image, ingredients, key}) => {
   </section>
 <Ingredient
 ingredients={ingredients}
+showIngredients = {showIngredients}
+setShowIngredients = {setShowIngredients}
 />
   </div>
 );

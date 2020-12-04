@@ -11,6 +11,7 @@ const [recipes, setRecipes] = useState([]);
 const [search, setSearch] = useState('');
 const [query, setQuery] = useState('vegetarian')
 
+
   useEffect(()=> {
     getRecipes();
   }, [query]);
@@ -45,7 +46,8 @@ const [query, setQuery] = useState('vegetarian')
                 title={recipe.recipe.label}
                 calories= {recipe.recipe.calories}
                 image= {recipe.recipe.image}
-                ingredients={recipe.recipe.ingredients}/>
+                ingredients={recipe.recipe.ingredients}
+              />
      ))}
      </div>
     </div>
