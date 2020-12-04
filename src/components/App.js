@@ -1,7 +1,4 @@
-import React, {
-  useEffect,
-  useState
-} from 'react';
+import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe';
 import Navbar from './Navbar';
 import apiKey from './apiKey';
@@ -12,7 +9,6 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('vegetarian')
-
 
   useEffect(() => {
     getRecipes();
@@ -34,44 +30,27 @@ function App() {
     setQuery(search);
     setSearch('');
   }
-  return ( <
-    div className = "App" >
-    <
-    Navbar getSearch = {
-      getSearch
+  return (< div className = "App" > <Navbar getSearch={getSearch
+} search={search
+} updateSearch={updateSearch
+}/> < div className = "recipes" > {
+    recipes.map((recipe) => (< Recipe id = {
+      recipe.id
     }
-    search = {
-      search
+    title = {
+      recipe.title
     }
-    updateSearch = {
-      updateSearch
+    // calories = {
+    //   recipe.calories
+    // }
+    image = {
+      recipe.image
     }
-    />
-
-    <
-    div className = "recipes" > {
-      recipes.map((recipe) => ( <
-        Recipe id = {
-          recipe.id
-        }
-        title = {
-          recipe.title
-        }
-        // calories = {
-        //   recipe.calories
-        // }
-        image = {
-          recipe.image
-        }
-        // ingredients = {
-        //   recipe.ingredients
-        // }
-        />
-      ))
-    } <
-    /div> < /
-    div >
-  );
+    ingredients = {
+      recipe.extendedIngredients
+    } />))
+  } < /div> 
+  < /div >);
 }
 
 export default App;
