@@ -30,7 +30,7 @@ const Ingredient = ({
         className = "checkbox" / > < label htmlFor = {
           index
         } > {
-          ingredient.text
+          ingredient.originalString
         } < /label></li > ))
     } <
     /ul>
