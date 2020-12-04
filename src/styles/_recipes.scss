@@ -1,5 +1,5 @@
 //main: App.scss
 
 .recipes{
-@include flex(space-around, center, column);
+@include flex(space-around, flex-start, row);
 }

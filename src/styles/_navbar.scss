@@ -21,17 +21,18 @@
   justify-content: center;
   flex: 3 1 40rem;
   border-radius: 5px;
+
 }
 
 .search-bar{
   width: 50%;
   border:none;
   padding: 1em;
-
+  border: 1px solid grey;
 }
 
 .search-button{
-  background: #f1c3cb;
+  background: #f7b067;
   border:none;
   padding: 1em 2em;
 }
