@@ -1,4 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {
+  useEffect,
+  useState
+} from 'react';
 import Recipe from './Recipe';
 import Navbar from './Navbar';
 import apiKey from './apiKey';
@@ -15,7 +18,7 @@ function App() {
   }, [query]);
 
   const getRecipes = async () => {
-    const response = await fetch(`https://api.spoonacular.com/recipes/random?number=10&tags=vegetarian&apiKey=${apiKey}`);
+    const response = await fetch(`https://api.spoonacular.com/recipes/random?number=20&tags=${query}&apiKey=${apiKey}`);
     const data = await response.json();
     console.log(data.recipes);
     setRecipes(data.recipes);
@@ -30,27 +33,34 @@ function App() {
     setQuery(search);
     setSearch('');
   }
-  return (< div className = "App" > <Navbar getSearch={getSearch
-} search={search
-} updateSearch={updateSearch
-}/> < div className = "recipes" > {
-    recipes.map((recipe) => (< Recipe id = {
-      recipe.id
+  return ( < div className = "App" > < Navbar getSearch = {
+      getSearch
     }
-    title = {
-      recipe.title
+    search = {
+      search
     }
-    // calories = {
-    //   recipe.calories
-    // }
-    image = {
-      recipe.image
+    updateSearch = {
+      updateSearch
     }
-    ingredients = {
-      recipe.extendedIngredients
-    } />))
-  } < /div> 
-  < /div >);
-}
+    /> < div className = "recipes" > {
+    recipes.map((recipe) => ( < Recipe id = {
+          recipe.id
+        }
+        title = {
+          recipe.title
+        }
+        servings = {
+          recipe.servings
+        }
+        image = {
+          recipe.image
+        }
+        ingredients = {
+          recipe.extendedIngredients
+        }
+        />))
+      } < /div> < /
+      div > );
+  }
 
-export default App;
+  export default App;
