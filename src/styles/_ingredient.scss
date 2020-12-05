@@ -1,20 +1,20 @@
 // main:App.scss
 
-.ingredients{
+.ingredients {
   list-style: none;
   line-height: 1.5rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem;
 }
 
-.ingredient{
-  margin:0.5em 0rem;
+.ingredient {
+  margin: 0.5em 0;
 }
 
-.checkbox{
+.checkbox {
   padding: 5px;
-  margin:0px 5px;
+  margin: 0 5px;
 }
 
-.checkbox:checked + label{
-text-decoration: line-through;
+.checkbox:checked + label {
+  text-decoration: line-through;
 }
