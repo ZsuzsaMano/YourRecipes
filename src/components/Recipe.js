@@ -8,7 +8,6 @@ import style from '../styles/recipe.module.css';
 
 const Recipe = ({
   title,
-  servings,
   image,
   ingredients,
   key
@@ -47,48 +46,30 @@ const Recipe = ({
     /> < /
     div > <
     div className = "flip_box__back" >
-    <
-    div className = {
-      style.icons
+
+     <h2 className = {style.title} >
+     {title}
+     </h2 >
+     <button className = "toggleIngredient"
+    onClick = {() => setShowIngredients(!showIngredients)
     } >
-    <
-    ToggleFavorite / >
-    <
-    ToggleBookmark / >
-    <
-    /div> <
-    h2 className = {
-      style.title
-    } > {
-      title
-    } <
-    /h2 > <
-    aside className = {
-      style.nutrition
-    } >
-    <
-    p >
-    Servings: {
-      servings
-    } <
-    /p> < /
-    aside > <
-    button className = "toggleIngredient"
-    onClick = {
-      () => setShowIngredients(!showIngredients)
-    } >
-    Ingredients < /button> <
-    button className = "goToRecipe" >
-    Recipes < /button > < /
-    div > < /div > < /
-    div > < /div > < /section >
-    <
-    Ingredient ingredients = {
-      ingredients
-    }
-    showIngredients = {
-      showIngredients
-    }
+    Ingredients
+    < /button>
+
+    <  div className = {style.icons} >
+    < ToggleFavorite / >
+    <button className = "goToRecipe" >
+  Go to Recipe
+    < /button >
+    < ToggleBookmark / >
+    < /div>
+     < /div >
+     < /div >
+     < /div >
+     < /div >
+     < /section >
+    <Ingredient ingredients = {ingredients}
+    showIngredients = {showIngredients}
     setShowIngredients = {
       setShowIngredients
     }
