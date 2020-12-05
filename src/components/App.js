@@ -1,11 +1,10 @@
-import React, {
-  useEffect,
-  useState
-} from 'react';
-import Recipe from './Recipe';
+import React, {useEffect,  useState} from 'react';
+import RecipeDetailed from './RecipeDetailed';
+import RecipePreview from './RecipePreview';
 import Navbar from './Navbar';
 import apiKey from './apiKey';
 import '../styles/App.min.css';
+
 
 function App() {
 
@@ -43,7 +42,7 @@ function App() {
       updateSearch
     }
     /> < div className = "recipes" > {
-    recipes.map((recipe) => ( < Recipe id = {
+    recipes.map((recipe) => ( < RecipePreview id = {
           recipe.id
         }
         title = {
