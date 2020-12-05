@@ -1,27 +1,28 @@
 //main: App.scss
 
-.toggleFavorite{
+.toggleFavorite {
   cursor: pointer;
-  fill:white;
+  fill: white;
 }
 
-.toggleFavorite-active{
-  fill:rgb(241, 218, 10);
+.toggleFavorite-active {
+  fill: rgb(241, 218, 10);
   stroke: rgb(217, 108, 8);
   stroke-width: 2px;
 }
 
-.toggleBookmark{
+.toggleBookmark {
   cursor: pointer;
-  fill:white;
+  fill: white;
 }
 
-.toggleBookmark-active{
-  fill:rgb(10, 60, 156);
+.toggleBookmark-active {
+  fill: rgb(10, 60, 156);
   stroke: #646464;
   stroke-width: 1px;
 }
 
-.toggleBookmark, .toggleFavorite{
-  margin: 5px;
+.toggleBookmark,
+.toggleFavorite {
+  margin: 3px;
 }
