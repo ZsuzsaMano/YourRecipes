@@ -1,6 +1,4 @@
-import React, {
-  useState
-} from 'react';
+import React, {useState} from 'react';
 import Ingredient from './Ingredient';
 import ToggleFavorite from './ToggleFavorite'
 import ToggleBookmark from './ToggleBookmark'
@@ -15,38 +13,19 @@ const RecipePreview = ({
 
   const [showIngredients, setShowIngredients] = useState(false)
 
-  return ( < div className = {
-      style.recipe
-    } > < div className = {
-      style.header
-    } >
-    <
-    /div> <
-    section className = {
-      style.about
-    } >
-    <
-    div className = {
-      style.recipe__fotos
-    } >
-    <
-    div className = "flip_box" >
-    <
-    div className = "flip_box__inner" >
-    <
-    div className = "flip_box__front" >
-    <
-    img src = {
-      image
-    }
+  return ( < div className = {style.recipe} >
+     < div className = {style.header} >
+    </div>
+     <section className = {style.about} >
+    <div className = {style.recipe__fotos} >
+    <div className = "flip_box" >
+    <div className = "flip_box__inner" >
+    <div className = "flip_box__front" >
+    <img src = {image}
     alt = "{title}"
-    className = {
-      style.image
-    }
-    /> < /
-    div > <
-    div className = "flip_box__back" >
-
+    className = {style.image}/>
+     < /div >
+     <div className = "flip_box__back" >
      <h2 className = {style.title} >
      {title}
      </h2 >

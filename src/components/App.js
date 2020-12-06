@@ -32,34 +32,21 @@ function App() {
     setQuery(search);
     setSearch('');
   }
-  return ( < div className = "App" > < Navbar getSearch = {
-      getSearch
-    }
-    search = {
-      search
-    }
-    updateSearch = {
-      updateSearch
-    }
-    /> < div className = "recipes" > {
-    recipes.map((recipe) => ( < RecipePreview id = {
-          recipe.id
-        }
-        title = {
-          recipe.title
-        }
-        servings = {
-          recipe.servings
-        }
-        image = {
-          recipe.image
-        }
-        ingredients = {
-          recipe.extendedIngredients
-        }
+  return (
+    < div className = "App" >
+   < Navbar getSearch = {getSearch}
+    search = {search}
+    updateSearch = {updateSearch}
+    />
+    < div className = "recipes" > {
+    recipes.map((recipe) => ( < RecipePreview id = {recipe.id}
+        title = {recipe.title}
+        servings = {recipe.servings}
+        image = {recipe.image}
+        ingredients = {recipe.extendedIngredients}
         />))
-      } < /div> < /
-      div > );
+      } < /div>
+       < /div > );
   }
 
   export default App;
