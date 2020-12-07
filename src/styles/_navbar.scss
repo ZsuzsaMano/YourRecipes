@@ -1,38 +1,39 @@
 //main: App.scss
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 1em;
 }
 
-.bookmarksBtn, .favoritsBtn{
+.bookmarksBtn,
+.favoritsBtn {
   border: none;
   flex: 1 1 10rem;
   padding: 1em;
   border-radius: 5px;
+  font-size: clamp(0.7rem, 3vw, 1rem);
 }
 
-.search-form{
-  min-height: 10vh;
+.search-form {
+  min-height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 3 1 40rem;
   border-radius: 5px;
-
 }
 
-.search-bar{
+.search-bar {
   width: 50%;
-  border:none;
+  border: none;
   padding: 1em;
   border: 1px solid grey;
 }
 
-.search-button{
+.search-button {
   background: #f7b067;
-  border:none;
+  border: none;
   padding: 1em 2em;
 }
