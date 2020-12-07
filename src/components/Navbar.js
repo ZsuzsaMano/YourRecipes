@@ -1,14 +1,13 @@
 import React from 'react';
 
-const Navbar = ({ getSearch, search, updateSearch }) => {
+const Navbar = ({ query, updateQuery }) => {
   return (
     <div className="navbar">
-    <button className="bookmarksBtn">My Bookmarks</button>
+    <button className="bookmarksBtn">Bookmarks</button>
      <form  className = "search-form">
-      <input className = "search-bar" type ="text" value={search} onChange={updateSearch}/>
-      <button type="submit" className = "search-button"> Search </button>
+      <input className = "search-bar" type ="text" placeholder = "search..." value={query} onChange={updateQuery}/>
      </form>
-     <button className="favoritsBtn">My Favorites</button>
+     <button className="favoritsBtn">Favorites</button>
      </div>
 
   );
