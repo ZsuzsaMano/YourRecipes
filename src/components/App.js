@@ -5,7 +5,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
 import RecipeDetailed from './RecipeDetailed';
 import RecipePreview from './RecipePreview';
 import Navbar from './Navbar';
@@ -30,20 +29,16 @@ function App() {
     setRecipes(data.recipes);
   };
 
-  const updateSearch = e => {
-    setSearch(e.target.value)
+  const updateQuery = e => {
+    console.log(query)
+    setQuery(e.target.value)
   }
 
-  const getSearch = e => {
-    e.preventDefault();
-    setQuery(search);
-    setSearch('');
-  }
   return (
     < div className = "App" >
-   < Navbar getSearch = {getSearch}
-    search = {search}
-    updateSearch = {updateSearch}
+   < Navbar
+    search = {query}
+    updateSearch = {updateQuery}
     />
     < div className = "recipes" > {
     recipes.map((recipe) => ( < RecipePreview id = {recipe.id}

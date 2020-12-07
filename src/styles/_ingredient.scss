@@ -2,12 +2,13 @@
 
 .ingredients {
   list-style: none;
-  line-height: 1.5rem;
-  padding: 1.5rem;
+  line-height: 1.5em;
+  padding: 1em;
 }
 
 .ingredient {
   margin: 0.5em 0;
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .checkbox {

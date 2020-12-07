@@ -4,7 +4,8 @@
   margin: 10px;
   align-items: center;
   background: white;
-  width: 20rem;
+  width: clamp(200px, 30%, 300px);
+  height: auto;
 }
 
 .header {
@@ -19,7 +20,7 @@
 }
 
 .title {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .about {}
