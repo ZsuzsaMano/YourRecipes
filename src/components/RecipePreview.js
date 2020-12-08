@@ -8,12 +8,12 @@ const RecipePreview = ({
   title,
   image,
   ingredients,
-  key
+  id
 }) => {
 
   const [showIngredients, setShowIngredients] = useState(false)
 
-  return ( < div className = {style.recipe} >
+  return ( < div key={id} className = {style.recipe} >
      < div className = {style.header} >
     </div>
      <section className = {style.about} >
@@ -22,7 +22,7 @@ const RecipePreview = ({
     <div className = "flip_box__inner" >
     <div className = "flip_box__front" >
     <img src = {image}
-    alt = "{title}"
+    alt = {'no image of ' + title } 
     className = {style.image}/>
      < /div >
      <div className = "flip_box__back" >
