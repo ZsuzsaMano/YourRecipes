@@ -5,7 +5,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import RecipeDetailed from './RecipeDetailed';
 import RecipePreview from './RecipePreview';
 import Navbar from './Navbar';
 import Recipe from './Recipe';
@@ -49,7 +48,11 @@ function App() {
       </Switch>
     </Router>
     < div className = "recipes" > {
-    recipes.map((recipe) => ( < RecipePreview id = {recipe.id}
+    recipes.map((recipe) => (
+
+       < RecipePreview
+       key={recipe.id}
+       id = {recipe.id}
         title = {recipe.title}
         servings = {recipe.servings}
         image = {recipe.image}
