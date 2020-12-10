@@ -1,19 +1,26 @@
 import React, {useState} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import Ingredient from './Ingredient';
-import ToggleFavorite from './ToggleFavorite'
-import ToggleBookmark from './ToggleBookmark'
+import ToggleFavorite from './ToggleFavorite';
+import ToggleBookmark from './ToggleBookmark';
 import style from '../styles/recipe.module.css';
 
 const RecipePreview = ({
   title,
   image,
   ingredients,
-  id
+  id,
 }) => {
+
 
   const [showIngredients, setShowIngredients] = useState(false)
 
-  return ( < div key={id} className = {style.recipe} >
+  return ( <div key={id} className = {style.recipe} >
      < div className = {style.header} >
     </div>
      <section className = {style.about} >
@@ -22,7 +29,7 @@ const RecipePreview = ({
     <div className = "flip_box__inner" >
     <div className = "flip_box__front" >
     <img src = {image}
-    alt = {'no image of ' + title } 
+    alt = {'no image of' + title }
     className = {style.image}/>
      < /div >
      <div className = "flip_box__back" >
@@ -38,7 +45,9 @@ const RecipePreview = ({
     <  div className = {style.icons} >
     < ToggleFavorite / >
     <button className = "goToRecipe" >
-  Go to Recipe
+    <Router>
+    <Link to={'recipe/'+id}>Go to Recipe</Link>
+    </Router>
     < /button >
     < ToggleBookmark / >
     < /div>
