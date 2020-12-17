@@ -1,10 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai'
 import {Sidebar} from './Sidebar'
+import {RecipeContext} from '../context/RecipeContext';
 
-const Navbar = ({ query, updateQuery }) => {
+const Navbar = () => {
+  const {query, setQuery} = useContext(RecipeContext);
+  const updateQuery = e => {
+    console.log(query)
+    setQuery(e.target.value)
+  }
   const [sidebar, setSidebar]=useState(false);
   const showsideBar = () => setSidebar(!sidebar);
   return (

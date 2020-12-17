@@ -6,57 +6,32 @@ import {
   Link
 } from "react-router-dom";
 import RecipeDetailed from './RecipeDetailed';
-import RecipePreview from './RecipePreview';
 import Navbar from './Navbar';
 import Login from '../pages/Login';
-import apiKey from './apiKey';
+import Home from '../pages/Home';
 import '../styles/App.min.css';
+import RecipeContextProvider from '../context/RecipeContext'
 
 
 function App() {
 
-  const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('vegetarian')
 
-  useEffect(() => {
-    getRecipes();
-  }, [query]);
 
-  const getRecipes = async () => {
-    const response = await fetch(`https://api.spoonacular.com/recipes/random?number=20&tags=${query}&apiKey=${apiKey}`);
-    const data = await response.json();
-    console.log(data.recipes);
-    setRecipes(data.recipes);
-  };
-
-  const updateQuery = e => {
-    console.log(query)
-    setQuery(e.target.value)
-  }
 
   return (
+    <RecipeContextProvider>
     < div className = "App" >
+    < Navbar/>
 <Router>
-   < Navbar
-    search = {query}
-    updateSearch = {updateQuery}
-    />
+
     <Switch>
-    <Route exact path='/'/>
+    <Route exact path='/' component = {Home}/>
     <Route path="/login" component= {Login}/>
     </Switch>
 </Router>
 
-    < div className = "recipes" > {
-    recipes.map((recipe) => ( < RecipePreview id = {recipe.id}
-        title = {recipe.title}
-        servings = {recipe.servings}
-        image = {recipe.image}
-        ingredients = {recipe.extendedIngredients}
-        />))
-      } < /div>
-       < /div > );
+       < /div >
+     </RecipeContextProvider>);
   }
 
   export default App;
