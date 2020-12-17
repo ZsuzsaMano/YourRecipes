@@ -8,6 +8,7 @@ import {
 import RecipeDetailed from './RecipeDetailed';
 import RecipePreview from './RecipePreview';
 import Navbar from './Navbar';
+import Login from '../pages/Login';
 import apiKey from './apiKey';
 import '../styles/App.min.css';
 
@@ -36,10 +37,17 @@ function App() {
 
   return (
     < div className = "App" >
+<Router>
    < Navbar
     search = {query}
     updateSearch = {updateQuery}
     />
+    <Switch>
+    <Route exact path='/'/>
+    <Route path="/login" component= {Login}/>
+    </Switch>
+</Router>
+
     < div className = "recipes" > {
     recipes.map((recipe) => ( < RecipePreview id = {recipe.id}
         title = {recipe.title}
