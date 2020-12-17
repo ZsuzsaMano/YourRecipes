@@ -14,10 +14,6 @@ import RecipeContextProvider from '../context/RecipeContext'
 
 
 function App() {
-
-
-
-
   return (
     <RecipeContextProvider>
     < div className = "App" >

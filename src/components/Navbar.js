@@ -6,12 +6,11 @@ import {Sidebar} from './Sidebar'
 import {RecipeContext} from '../context/RecipeContext';
 
 const Navbar = () => {
-  const {query, setQuery} = useContext(RecipeContext);
+  const {query, setQuery, sidebar, setSidebar} = useContext(RecipeContext);
   const updateQuery = e => {
-    console.log(query)
     setQuery(e.target.value)
   }
-  const [sidebar, setSidebar]=useState(false);
+
   const showsideBar = () => setSidebar(!sidebar);
   return (
     <div className="navbar">
