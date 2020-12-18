@@ -5,7 +5,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import RecipeDetailed from './RecipeDetailed';
+<<<<<<< HEAD
+import RecipePreview from './RecipePreview';
+import Recipe from './Recipe';
 import Navbar from './Navbar';
 import Login from '../pages/Login';
 import Home from '../pages/Home';
@@ -23,6 +25,9 @@ function App() {
     <Switch>
     <Route exact path='/' component = {Home}/>
     <Route path="/login" component= {Login}/>
+      <Route path={`/recipe/:id`}>
+      <Recipe/>
+      </Route>
     </Switch>
 </Router>
 

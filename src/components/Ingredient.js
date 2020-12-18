@@ -3,18 +3,17 @@ import React from 'react';
 const Ingredient = ({
   ingredients,
   setShowIngredients,
-  showIngredients
+  showIngredients,
 }) => {
-
 
   const ulStyle = {
     display: showIngredients ? 'block' : 'none',
-  }
+  };
 
-  return ( <ul className = "ingredients"
+  return (<ul className = "ingredients"
     style = {ulStyle}
     onClick = {() => setShowIngredients(!showIngredients)
-    } > {ingredients.map((ingredient, index) => ( <
+    } > {ingredients.map((ingredient, index) => (<
         li key = {index}
         className = "ingredient" > {
           /* < input type = "checkbox"
@@ -29,7 +28,7 @@ const Ingredient = ({
          < /label>*/
 }
 {ingredient.originalString}
- < /li > ))
+ < /li >))
     } </ul>
   );
 };

@@ -1,0 +1,18 @@
+//main: App.scss
+
+.displayedRecipe{
+  text-align: center;
+  background-color: #484646;
+  padding: 1em;
+  color: white;
+  h1{
+    padding: 1em;
+  }
+  &__hero{
+    @include flex(space-around , center, row);
+  }
+  aside{
+    min-height: 20vw;
+    @include flex(space-around , center, column);
+  }
+}
