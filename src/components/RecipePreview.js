@@ -20,7 +20,7 @@ const RecipePreview = ({
 
   const [showIngredients, setShowIngredients] = useState(false)
 
-  return ( <div key={id} className = {style.recipe} >
+  return ( <div className = {style.recipe} >
      < div className = {style.header} >
     </div>
      <section className = {style.about} >
