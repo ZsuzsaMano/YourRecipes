@@ -18,9 +18,9 @@ function App() {
   return (
     <RecipeContextProvider>
     < div className = "App" >
-    < Navbar/>
-<Router>
 
+<Router>
+<Navbar/>
     <Switch>
     <Route exact path='/' component = {Home}/>
     <Route path="/login" component= {Login}/>
