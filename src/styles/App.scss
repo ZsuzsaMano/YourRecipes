@@ -1,28 +1,24 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
-@mixin flex($justfy, $align, $direction){
+@mixin flex($justfy, $align, $direction) {
   display: flex;
-  flex-wrap: wrap;
   justify-content: $justfy;
   align-items: $align;
   flex-direction: $direction;
 }
-
 @import 'navbar';
 @import 'recipes';
 @import 'ingredient';
 @import 'bookmarkFavorite';
 @import 'flipBox';
 
-
-img{
-  border-radius:5px;
+img {
+  border-radius: 5px;
 }
 
 .App {
-min-height: 100vh;
+  min-height: 100vh;
 }

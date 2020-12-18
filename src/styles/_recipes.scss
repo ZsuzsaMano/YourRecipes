@@ -1,5 +1,6 @@
 //main: App.scss
 
-.recipes{
-@include flex(space-around, flex-start, row);
+.recipes {
+  @include flex(space-around, flex-start, row);
+  flex-wrap: wrap;
 }
