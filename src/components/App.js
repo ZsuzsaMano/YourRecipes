@@ -5,7 +5,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-<<<<<<< HEAD
 import RecipePreview from './RecipePreview';
 import Recipe from './Recipe';
 import Navbar from './Navbar';

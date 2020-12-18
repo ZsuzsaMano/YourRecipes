@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import apiKey from './apiKey';
+import apiKey from '../apiKey';
 
 const Recipe = ({ query }) => {
   const [recipe, setRecipe] = useState([]);

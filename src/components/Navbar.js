@@ -36,7 +36,8 @@ const Navbar = () => {
 })}
 </ul>
 </nav>
-</div>
+</div
+    >
     <button className="bookmarksBtn">Bookmarks</button>
      <form  className = "search-form">
       <input className = "search-bar" type ="text" placeholder = "search..." value={query} onChange={updateQuery}/>
