@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useParams } from 'react';
 import apiKey from '../apiKey';
 
-const Recipe = ({ query }) => {
+const Recipe = ({}) => {
   const [recipe, setRecipe] = useState([]);
 
   useEffect(() => {
     getRecipe();
-  }, [query]);
+  }, []);
 
-  const id2 = 716320;
-  const currentId = window.location.href;
-  console.log(currentId);
+let id = useParams();
 
   const getRecipe = async () => {
-    const response = await fetch(`https://api.spoonacular.com/recipes/${id2}/information?includeNutrition=true&apiKey=${apiKey}`);
+    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${apiKey}`);
     const data = await response.json();
     console.log(data);
     setRecipe(data);
-    console.log(currentId);
   };
 
   return (
