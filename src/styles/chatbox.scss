@@ -25,11 +25,12 @@
   }
 
   &__text {
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
 
   &__time {
     color: grey;
     font-size: 0.8rem;
+    text-align: right;
   }
 }
