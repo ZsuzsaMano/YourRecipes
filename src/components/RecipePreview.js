@@ -21,7 +21,7 @@ const RecipePreview = ({
   const [showIngredients, setShowIngredients] = useState(false)
 
   return ( <div className = {style.recipe} >
-     < div className = {style.header} >
+     <div className = {style.header} >
     </div>
      <section className = {style.about} >
     <div className = {style.recipe__fotos} >
@@ -48,21 +48,18 @@ const RecipePreview = ({
     <Router>
     <Link to={'recipe/'+id}>Go to Recipe</Link>
     </Router>
-    < /button >
-    < ToggleBookmark / >
-    < /div>
-     < /div >
-     < /div >
-     < /div >
-     < /div >
-     < /section >
+    </button >
+    <ToggleBookmark / >
+    </div>
+     </div >
+     </div >
+     </div >
+     </div >
+     </section >
     <Ingredient ingredients = {ingredients}
     showIngredients = {showIngredients}
-    setShowIngredients = {
-      setShowIngredients
-    }
-    / > < /
-    div >
+    setShowIngredients = {setShowIngredients}/>
+  </div >
 
   );
 };

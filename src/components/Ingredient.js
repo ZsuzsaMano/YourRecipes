@@ -16,16 +16,6 @@ const Ingredient = ({
     } > {ingredients.map((ingredient, index) => (<
         li key = {index}
         className = "ingredient" > {
-          /* < input type = "checkbox"
-                        id = {
-                          index
-                        }
-                        className = "checkbox" / > < label htmlFor = {
-                          index
-                        } >
-
-
-         < /label>*/
 }
 {ingredient.originalString}
  < /li >))
