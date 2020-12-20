@@ -27,3 +27,6 @@ apiKey.js
 
 #lint
 .eslintcache
+
+# Local Netlify folder
+.netlify
