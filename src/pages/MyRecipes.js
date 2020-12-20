@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Details = (props) => {
+const MyRecipes = (props) => {
   return (
     <div />
   )
 }
 
-export default Details;
+export default MyRecipes;

@@ -1,14 +1,18 @@
-import React, { useEffect, useState, useParams } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { useParams } from "react-router-dom";
 import apiKey from '../apiKey';
+import {RecipeContext} from '../context/RecipeContext';
 
-const Recipe = ({}) => {
-  const [recipe, setRecipe] = useState([]);
+
+const Recipe = () => {
+const {recipe, recipes, setRecipe} = useContext(RecipeContext);
 
   useEffect(() => {
     getRecipe();
   }, []);
 
-let id = useParams();
+let {id }= useParams();
+
 
   const getRecipe = async () => {
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${apiKey}`);

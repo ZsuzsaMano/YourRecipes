@@ -10,6 +10,9 @@ import Recipe from './Recipe';
 import Navbar from './Navbar';
 import Login from '../pages/Login';
 import Home from '../pages/Home';
+import Chat from '../pages/Chat';
+import MyRecipes from '../pages/MyRecipes';
+
 import '../styles/App.min.css';
 import RecipeContextProvider from '../context/RecipeContext'
 
@@ -24,6 +27,8 @@ function App() {
     <Switch>
     <Route exact path='/' component = {Home}/>
     <Route path="/login" component= {Login}/>
+      <Route path="/chat" component= {Chat}/>
+        <Route path="/myrecipes" component= {MyRecipes}/>
       <Route path={`/recipe/:id`}>
       <Recipe/>
       </Route>

@@ -9,6 +9,7 @@ const RecipeContextProvider = (props) => {
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState('');
       const [sidebar, setSidebar]=useState(false);
+        const [recipe, setRecipe] = useState([]);
 
     useEffect(() => {
       getRecipes();
@@ -22,7 +23,7 @@ const RecipeContextProvider = (props) => {
     };
 
   return (
-    <RecipeContext.Provider value={{sidebar, setSidebar, recipes, setRecipes, query, setQuery}}>
+    <RecipeContext.Provider value={{sidebar, setSidebar,recipe,setRecipe, recipes, setRecipes, query, setQuery}}>
     {props.children}
     </RecipeContext.Provider>
   )
