@@ -1,48 +1,46 @@
-import React from 'react';
-import Ingredient from './Ingredient';
-import ToggleFavorite from './ToggleFavorite';
-import ToggleBookmark from './ToggleBookmark';
-import style from '../styles/recipe.module.css';
 
-const Recipe = ({ title, calories, image, ingredients, key }) => {
+import React, { useEffect, useState, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import apiKey from '../apiKey';
+import { RecipeContext } from '../context/RecipeContext';
+
+const Recipe = () => {
+  const { recipe, recipes, setRecipe } = useContext(RecipeContext);
+
+  useEffect(() => {
+    getRecipe();
+  }, []);
+
+  let { id } = useParams();
+
+  const getRecipe = async () => {
+    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${apiKey}`);
+    const data = await response.json();
+    console.log(data);
+    setRecipe(data);
+  };
+
   return (
-  <div className ={style.recipe}>
-  <div className ={style.header}>
+    <div className="displayedRecipe">
+        <h1> {recipe.title} </h1>
+        <div className= "displayedRecipe__hero">
+          <img src={recipe.image}/>
+          <aside>
+          <h4> Preparation Time: {recipe.readyInMinutes} min</h4>
+            {recipe.vegetarian ? 'vegetarian, ' : ''}
+            {recipe.vegan ? 'vegan, ' : ''}
+            {recipe.glutenFree ? 'gluten Free, ' : ''}
+            {recipe.dairyFree ? 'dairy Free, ' : ''}
+            {recipe.veryHealthy ? 'very Healthy, ' : ''}
+            {recipe.cheap ? 'cheap, ' : ''}
+            {recipe.veryPopular ? 'very Popular, ' : ''}
+            {recipe.sustainable ? 'sustainable, ' : ''}
 
-
-   </div>
-    <section className ={style.about}>
-
-    <div className ={style.recipe__fotos}>
-  <div className ={style.flip_box}>
-<div className ={style.flip_box__inner}>
-<div className ={style.flip_box__front}>
-<img src={image} alt="{title}" className ={style.image} />
-</div>
-<div className ={style.flip_box__back}>
-<div className = {style.icons}>
-<ToggleFavorite/>
-<ToggleBookmark/>
-</div>
-    <h2 className ={style.title} >{title}</h2>
-    <aside className ={style.nutrition}>
-    <p>Calories per serving:{' ' + Math.floor(calories)}</p>
-    </aside>
-<p>Click to view recipe:
-</p>
-<a href="" target="_blank">Recipe</a>
-</div>
-</div>
-</div>
-</div>
-
-
-  </section>
-<Ingredient
-ingredients={ingredients}
-/>
-  </div>
-);
+            <h4> Servings: {recipe.servings} </h4>
+          </aside>
+      </div>
+    </div>
+  );
 };
 
 export default Recipe;
