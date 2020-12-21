@@ -1,10 +1,10 @@
-import React, {useEffect,  useState} from 'react';
+import React, { useEffect,  useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
-} from "react-router-dom";
+} from 'react-router-dom';
 import RecipePreview from './RecipePreview';
 import Recipe from './Recipe';
 import Navbar from './Navbar';
@@ -14,8 +14,7 @@ import Chat from '../pages/Chat';
 import MyRecipes from '../pages/MyRecipes';
 
 import '../styles/App.min.css';
-import RecipeContextProvider from '../context/RecipeContext'
-
+import RecipeContextProvider from '../context/RecipeContext';
 
 function App() {
   return (
@@ -37,6 +36,6 @@ function App() {
 
        < /div >
      </RecipeContextProvider>);
-  }
+}
 
-  export default App;
+export default App;

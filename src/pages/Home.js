@@ -1,15 +1,17 @@
-import React, {useState, useContext} from 'react'
-import PropTypes from 'prop-types'
-import RecipePreview from '../components/RecipePreview';
-import {RecipeContext} from '../context/RecipeContext';
+import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 
+import RecipePreview from '../components/RecipePreview';
+import { RecipeContext } from '../context/RecipeContext';
 
 const Home = () => {
-  const {recipes, setRecipes, query, setQuery} = useContext(RecipeContext);
+  const { recipes, setRecipes, query, setQuery } = useContext(RecipeContext);
 
+  return (
+  <div className = "home">
 
-  return ( < div className = "recipes" > {
-    recipes.map((recipe) => ( < RecipePreview
+    < div className = "recipes" > {
+    recipes.map((recipe) => (< RecipePreview
        key={recipe.id}
        id = {recipe.id}
         title = {recipe.title}
@@ -18,8 +20,9 @@ const Home = () => {
         ingredients = {recipe.extendedIngredients}
         />))
       } < /div>
+      </div>
 
-  )
-}
+  );
+};
 
 export default Home;
