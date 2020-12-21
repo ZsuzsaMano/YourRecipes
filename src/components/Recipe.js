@@ -1,11 +1,11 @@
 import React from 'react';
 import Ingredient from './Ingredient';
-import ToggleFavorite from './ToggleFavorite'
-import ToggleBookmark from './ToggleBookmark'
+import ToggleFavorite from './ToggleFavorite';
+import ToggleBookmark from './ToggleBookmark';
 import style from '../styles/recipe.module.css';
 
-const Recipe = ({title, calories, image, ingredients, key}) => {
-  return(
+const Recipe = ({ title, calories, image, ingredients, key }) => {
+  return (
   <div className ={style.recipe}>
   <div className ={style.header}>
 
@@ -26,7 +26,7 @@ const Recipe = ({title, calories, image, ingredients, key}) => {
 </div>
     <h2 className ={style.title} >{title}</h2>
     <aside className ={style.nutrition}>
-    <p>Calories per serving:{' '+Math.floor(calories)}</p>
+    <p>Calories per serving:{' ' + Math.floor(calories)}</p>
     </aside>
 <p>Click to view recipe:
 </p>

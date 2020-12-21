@@ -24,3 +24,9 @@ yarn-error.log*
 
 # apikey
 apiKey.js
+
+#lint
+.eslintcache
+
+# Local Netlify folder
+.netlify

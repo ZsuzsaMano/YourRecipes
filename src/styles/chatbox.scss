@@ -1,0 +1,36 @@
+//main: App.scss
+
+.mainbox {
+  height: 90vh;
+}
+
+.mainbox__body {
+  background: url("../img/chatBG.png");
+  width: clamp(200px, 80%, 800px);
+  height: clamp(500px, 90%, 800px);
+  margin: auto;
+  background-size: contain;
+  padding: 1rem;
+}
+
+.bubble {
+  background: white;
+  padding: 1rem;
+  width: 60%;
+  border-radius: 5px;
+
+  &__name {
+    font-weight: bolder;
+    font-size: 0.9rem;
+  }
+
+  &__text {
+    padding: 0.5rem 0;
+  }
+
+  &__time {
+    color: grey;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+}

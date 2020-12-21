@@ -5,10 +5,81 @@
   justify-content: space-around;
   align-items: center;
   margin: 1em;
+  background: grey;
+}
+
+.navbar__menu {
+  background: black;
+  height: 80px;
+  @include flex(start, center, row);
+  z-index: 99;
+}
+
+.menu-bars {
+  margin: 2rem;
+  font-size: 2rem;
+  background: none;
+
+  svg {
+    fill: white;
+  }
+}
+
+.nav-menu {
+  background-color: black;
+  width: 250px;
+  height: 100vh;
+  @include flex(center, center, row);
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  @include flex(start, center, row);
+  padding: 8px 0 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  width: 95%;
+  height: 100%;
+  @include flex(center, center, row);
+  padding: 0 1rem;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: grey;
+  }
+}
+
+nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: black;
+  @include flex(start, center, row);
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
 }
 
 .bookmarksBtn,
 .favoritsBtn {
+  display: none;
   border: none;
   flex: 1 1 10rem;
   padding: 1em;
