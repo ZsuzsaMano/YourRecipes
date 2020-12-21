@@ -8,7 +8,7 @@ import {
 import RecipePreview from './RecipePreview';
 import Recipe from './Recipe';
 import Navbar from './Navbar';
-import Login from '../pages/Login';
+import LoginPage from '../pages/LoginPage';
 import Home from '../pages/Home';
 import Chat from '../pages/Chat';
 import MyRecipes from '../pages/MyRecipes';
@@ -25,7 +25,7 @@ function App() {
 <Navbar/>
     <Switch>
     <Route exact path='/' component = {Home}/>
-    <Route path="/login" component= {Login}/>
+    <Route path="/login" component= {LoginPage}/>
       <Route path="/chat" component= {Chat}/>
         <Route path="/myrecipes" component= {MyRecipes}/>
       <Route path={`/recipe/:id`}>
