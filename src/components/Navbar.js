@@ -36,6 +36,9 @@ const Navbar = (props) => {
 </nav>
 </div>
         <Searchbar/>
+        <Link to="login" className="login__button">
+      Login
+  </Link>
      </div>
 
     );

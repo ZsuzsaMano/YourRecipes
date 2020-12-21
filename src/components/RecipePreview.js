@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
-} from "react-router-dom";
+} from 'react-router-dom';
 import Ingredient from './Ingredient';
 import ToggleFavorite from './ToggleFavorite';
 import ToggleBookmark from './ToggleBookmark';
@@ -17,10 +17,9 @@ const RecipePreview = ({
   id,
 }) => {
 
+  const [showIngredients, setShowIngredients] = useState(false);
 
-  const [showIngredients, setShowIngredients] = useState(false)
-
-  return ( <div className = {style.recipe} >
+  return (<div className = {style.recipe} >
      <div className = {style.header} >
     </div>
      <section className = {style.about} >
@@ -45,9 +44,7 @@ const RecipePreview = ({
     <  div className = {style.icons} >
     < ToggleFavorite / >
     <button className = "goToRecipe" >
-    <Router>
-    <Link to={'recipe/'+id}>Go to Recipe</Link>
-    </Router>
+    <Link to={'recipe/' + id}>Go to Recipe</Link>
     </button >
     <ToggleBookmark / >
     </div>
