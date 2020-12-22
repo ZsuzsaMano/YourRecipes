@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ChatMessage from './ChatMessage';
 
 const ChatMainBox = (props) => {

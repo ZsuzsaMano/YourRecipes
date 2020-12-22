@@ -1,5 +1,4 @@
 import React, {createContext, useState, useEffect} from 'react'
-import PropTypes from 'prop-types';
 import apiKey from '../apiKey';
 
 export const RecipeContext = createContext();
@@ -7,7 +6,6 @@ export const RecipeContext = createContext();
 const RecipeContextProvider = (props) => {
     const [query, setQuery] = useState('vegetarian')
     const [recipes, setRecipes] = useState([]);
-    const [search, setSearch] = useState('');
       const [sidebar, setSidebar]=useState(false);
         const [recipe, setRecipe] = useState([]);
 

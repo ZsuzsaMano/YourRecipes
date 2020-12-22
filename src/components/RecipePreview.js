@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from 'react-router-dom';
 import Ingredient from './Ingredient';
@@ -28,8 +25,8 @@ const RecipePreview = ({
     <div className = "flip_box__inner" >
     <div className = "flip_box__front" >
     <img src = {image}
-    alt = {'no image of' + title }
-    className = {style.image}/>
+    alt = {'Sorry, but no image of ' + title }
+    className = {image ? style.image : style.alt}/>
      < /div >
      <div className = "flip_box__back" >
      <h2 className = {style.title} >

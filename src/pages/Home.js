@@ -1,11 +1,9 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-
+import React, { useContext } from 'react';
 import RecipePreview from '../components/RecipePreview';
 import { RecipeContext } from '../context/RecipeContext';
 
 const Home = () => {
-  const { recipes, setRecipes, query, setQuery } = useContext(RecipeContext);
+  const { recipes } = useContext(RecipeContext);
 
   return (
   <div className = "home">

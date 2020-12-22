@@ -10,7 +10,7 @@
 .navbar__menu {
   background: black;
   height: 80px;
-  @include flex(start, center, row);
+  @include flex(flex-start, center, row);
   z-index: 99;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .nav-text {
-  @include flex(start, center, row);
+  @include flex(flex-start, center, row);
   padding: 8px 0 8px 16px;
   list-style: none;
   height: 60px;
@@ -68,7 +68,7 @@ nav-menu-items {
 
 .navbar-toggle {
   background-color: black;
-  @include flex(start, center, row);
+  @include flex(flex-start, center, row);
   align-items: center;
 }
 

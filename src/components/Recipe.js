@@ -1,11 +1,11 @@
 
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import apiKey from '../apiKey';
 import { RecipeContext } from '../context/RecipeContext';
 
 const Recipe = () => {
-  const { recipe, recipes, setRecipe } = useContext(RecipeContext);
+  const { recipe, setRecipe} = useContext(RecipeContext);
 
   useEffect(() => {
     getRecipe();
@@ -26,7 +26,7 @@ const Recipe = () => {
         <Link to="/" className="back">X</Link>
         <h1> {recipe.title} </h1>
         <div className= "displayedRecipe__hero">
-          <img src={recipe.image}/>
+          <img src={recipe.image} alt={recipe.title}/>
           <aside>
           <h4> Preparation Time: {recipe.readyInMinutes} min</h4>
             {recipe.vegetarian ? 'vegetarian, ' : ''}

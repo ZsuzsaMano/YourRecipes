@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import React, { useContext } from 'react';
 import { RecipeContext } from '../context/RecipeContext';
 
 const Searchbar = () => {
