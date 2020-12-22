@@ -1,6 +1,6 @@
 //main: App.scss
 
-.login {
+.login, .register {
   width: clamp(200px, 80%, 400px);
   margin: auto;
   height: 80vh;
@@ -19,7 +19,13 @@
     padding: 0.2rem;
   }
 
+
   button {
     width: 100%;
   }
+}
+
+
+.register .register__form{
+  height: 300px;
 }
