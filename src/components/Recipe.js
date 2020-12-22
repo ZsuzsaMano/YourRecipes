@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import apiKey from '../apiKey';
 import { RecipeContext } from '../context/RecipeContext';
 
@@ -22,6 +22,8 @@ const Recipe = () => {
 
   return (
     <div className="displayedRecipe">
+
+        <Link to="/" className="back">X</Link>
         <h1> {recipe.title} </h1>
         <div className= "displayedRecipe__hero">
           <img src={recipe.image}/>

@@ -1,12 +1,19 @@
 //main: App.scss
 
 .displayedRecipe{
-  text-align: center;
+text-align: right;
   background-color: #484646;
   padding: 1em;
   color: white;
   h1{
     padding: 1em;
+    text-align: center;
+  }
+  .back{
+    text-align: right;
+    color:white;
+    font-size:2rem;
+    text-decoration: none;
   }
   &__hero{
     @include flex(space-around , center, row);
