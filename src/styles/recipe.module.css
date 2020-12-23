@@ -32,6 +32,12 @@
   object-fit: cover;
 }
 
+.alt{
+  padding: 2rem 1rem;
+  line-height: 1.2em;
+  display: inline-block;
+}
+
 .nutrition {
   color: orange;
   font-size: 0.8rem;
