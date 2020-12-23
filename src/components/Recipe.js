@@ -1,11 +1,15 @@
 
 import React, { useEffect, useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import apiKey from '../apiKey';
 import { RecipeContext } from '../context/RecipeContext';
 
 const Recipe = () => {
-  const { recipe, setRecipe} = useContext(RecipeContext);
+  const { recipe, setRecipe } = useContext(RecipeContext);
+  const history = useHistory();
+  const goBackHandle = ()=> {
+    history.goBack();
+  };
 
   useEffect(() => {
     getRecipe();
@@ -23,7 +27,7 @@ const Recipe = () => {
   return (
     <div className="displayedRecipe">
 
-        <Link to="/" className="back">X</Link>
+        <button className="back" onClick={goBackHandle}>X</button>
         <h1> {recipe.title} </h1>
         <div className= "displayedRecipe__hero">
           <img src={recipe.image} alt={recipe.title}/>
