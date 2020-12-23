@@ -15,15 +15,15 @@ const Navbar = (props) => {
     return (
       <div className="navbar">
       <div className="navbar__menu">
-      <Link  className="menu-bars">
+      <button  className="menu-bars">
         <FaIcons.FaBars onClick={showsideBar}/>
-      </Link>
+      </button>
 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
 <ul className="nav-menu-items" onClick={showsideBar}>
 <li className="navbar-toggle">
-<Link  className="menu-bars">
+<button  className="menu-bars">
 <AiIcons.AiOutlineClose/>
-</Link>
+</button>
 </li>
 {Sidebar.map((item, index)=> {
       return (
