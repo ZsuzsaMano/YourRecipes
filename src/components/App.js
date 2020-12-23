@@ -28,6 +28,9 @@ function App() {
 <Navbar/>
     <Switch>
     <Route exact path='/' component = {Home}/>
+      <Route exact path={`/recipe/:id`}>
+    <Recipe/>
+    </Route>
     <Route exact path="/login" component= {LoginPage}/>
       <Route exact path= "/register">
         <Register/>
@@ -40,9 +43,7 @@ function App() {
         <Route path="/myrecipes" render = {() => {
         return isLoggedin ? <MyRecipes/> : <Redirect to="/login"/>; }
           }/>
-        <Route exact path={`/recipe/:id`}>
-      <Recipe/>
-      </Route>
+
 
     </Switch>
 </Router>
