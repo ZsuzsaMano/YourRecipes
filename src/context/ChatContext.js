@@ -23,7 +23,7 @@ const ChatContextProvider = (props) => {
     };
 
     useEffect(()=> {
-      setMessages();
+      getMessages();
     }, []);
     return (
       <ChatContext.Provider value={{ messages }}>

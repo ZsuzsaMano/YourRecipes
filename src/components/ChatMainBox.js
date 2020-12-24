@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChatContext } from '../context/ChatContext';
 import ChatMessage from './ChatMessage';
 
 const ChatMainBox = (props) => {
-  return (
-    <div className="mainbox">
+    const { messages } = useContext(ChatContext);
+    return (
+      <div className="mainbox">
     <div className="mainbox__body">
-    <ChatMessage/>
+      {messages.map(message=>
+            <ChatMessage
+              key = {message.id}
+              name = {message.name}
+              message = {message.message}/>
+      )}
+
     </div>
     </div>
-  )
-}
+    );
+  };
 
 export default ChatMainBox;

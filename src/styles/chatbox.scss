@@ -16,21 +16,25 @@
 .bubble {
   background: white;
   padding: 1rem;
-  width: 60%;
+  margin: 1rem;
+  width: clamp(150px, 60%, 400px) ;
   border-radius: 5px;
+
+
 
   &__name {
     font-weight: bolder;
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
   }
 
   &__text {
     padding: 0.5rem 0;
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
 
   &__time {
     color: grey;
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
     text-align: right;
   }
 }
