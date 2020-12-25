@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import firebase from '../firebase/firebase';
 
@@ -7,9 +7,11 @@ export const ChatContext = createContext();
 const ChatContextProvider = (props) => {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [inputmessage, setInputmessage] = useState('');
 
     const ref = firebase.firestore().collection('chat');
 
+    //get messages from firestore
     const getMessages = () => {
       setLoading(true);
       ref.onSnapshot((querySnapshot)=> {
@@ -25,8 +27,9 @@ const ChatContextProvider = (props) => {
     useEffect(()=> {
       getMessages();
     }, []);
+
     return (
-      <ChatContext.Provider value={{ messages }}>
+      <ChatContext.Provider value={{ ref, messages, inputmessage, setInputmessage }}>
         {props.children}
       </ChatContext.Provider>
 

@@ -2,9 +2,10 @@
 
 .mainbox {
   height: 90vh;
+  overflow-y:scroll;
 }
 
-.mainbox__body {
+.chatpage {
   background: url("../img/chatBG.png");
   width: clamp(200px, 80%, 800px);
   height: clamp(500px, 90%, 800px);
@@ -36,5 +37,25 @@
     color: grey;
     font-size: clamp(0.6rem, 1vw, 0.8rem);
     text-align: right;
+  }
+}
+
+.chatinput{
+  background: black;
+  min-height: 4rem;
+  @include flex (space-around, center, row);
+  textarea{
+    width: 80%;
+    min-height: 4rem;
+    padding: 0.4rem;
+    margin:0.2rem;
+    border-radius: 5px;
+  }
+  button{
+    border:none;
+    background: white;
+    padding: 0.5em;
+    margin:1rem;
+    border-radius: 5px;
   }
 }
