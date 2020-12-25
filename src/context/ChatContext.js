@@ -14,7 +14,7 @@ const ChatContextProvider = (props) => {
     //get messages from firestore
     const getMessages = () => {
       setLoading(true);
-      ref.onSnapshot((querySnapshot)=> {
+      ref.orderBy('date').onSnapshot((querySnapshot)=> {
         const msgs = [];
         querySnapshot.forEach((doc)=> {
           msgs.push(doc.data());

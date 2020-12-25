@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import { ChatContext } from '../context/ChatContext';
+import { LoginContext } from '../context/LoginContext';
+
 import moment from 'moment';
 
-const ChatMessage = ({ message, name, date }) => {
-
+const ChatMessage = ({ message, chatName, date }) => {
+  const { name } = useContext(LoginContext);
   const dateFrom = moment(date).fromNow();
   return (
-    <div className="bubble">
-      <p className="bubble__name">{name}</p>
+    <div className={chatName === name ? 'mybubble bubble' : 'bubble'}>
+      <p className="bubble__name">{chatName}</p>
       <p className="bubble__text">{message}</p>
       <p className="bubble__time">{dateFrom}</p>
     </div>

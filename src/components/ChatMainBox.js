@@ -19,7 +19,7 @@ const ChatMainBox = (props) => {
       {messages.map(message=>
             <ChatMessage
               key = { uuidv4()}
-              name = {message.name}
+              chatName = {message.name}
               message = {message.message}
               date= {message.date}/>
       )}

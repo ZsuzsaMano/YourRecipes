@@ -11,7 +11,6 @@
   height: clamp(500px, 90%, 800px);
   margin: auto;
   background-size: contain;
-  padding: 1rem;
 }
 
 .bubble {
@@ -20,24 +19,25 @@
   margin: 1rem;
   width: clamp(150px, 60%, 400px) ;
   border-radius: 5px;
-
-
-
   &__name {
     font-weight: bolder;
     font-size: clamp(0.7rem, 1.5vw, 0.9rem);
   }
-
   &__text {
     padding: 0.5rem 0;
     font-size: clamp(0.8rem, 2vw, 1rem);
   }
-
   &__time {
     color: grey;
     font-size: clamp(0.6rem, 1vw, 0.8rem);
     text-align: right;
   }
+}
+
+.mybubble{
+  position: relative;
+  left: 20%;
+  background-color: rgb(246, 228, 175);
 }
 
 .chatinput{

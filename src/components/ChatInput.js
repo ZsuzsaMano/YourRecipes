@@ -15,6 +15,7 @@ const ChatInput = (props) => {
       message: inputmessage,
       date: dateNow,
     });
+    setInputmessage('');
   };
 
   const handleOnChangeInputMessage = e => {
