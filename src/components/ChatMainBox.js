@@ -20,7 +20,8 @@ const ChatMainBox = (props) => {
             <ChatMessage
               key = { uuidv4()}
               name = {message.name}
-              message = {message.message}/>
+              message = {message.message}
+              date= {message.date}/>
       )}
 
     </div>

@@ -8,10 +8,12 @@ const ChatInput = (props) => {
   const { name } = useContext(LoginContext);
 
   const sendMessage = e => {
+    const dateNow = new Date().toUTCString();
     e.preventDefault();
     ref.add({
       name: name,
       message: inputmessage,
+      date: dateNow,
     });
   };
 

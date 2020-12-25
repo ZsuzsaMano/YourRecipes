@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { ChatContext } from '../context/ChatContext';
 import moment from 'moment';
 
-const ChatMessage = ({ message, name }) => {
-  const dateFrom = moment().fromNow();
+const ChatMessage = ({ message, name, date }) => {
+
+  const dateFrom = moment(date).fromNow();
   return (
     <div className="bubble">
       <p className="bubble__name">{name}</p>
