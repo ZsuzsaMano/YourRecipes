@@ -24,4 +24,12 @@ text-align: right;
     min-height: 20vw;
     @include flex(space-around , center, column);
   }
+  &__preparation{
+    h3{
+      padding:0.5em;
+    }
+    text-align: left;
+    line-height: 1.5em;
+    padding: 1rem;
+  }
 }

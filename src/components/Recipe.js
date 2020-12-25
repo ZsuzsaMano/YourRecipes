@@ -2,6 +2,7 @@
 import React, { useEffect, useContext } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import apiKey from '../apiKey';
+import Ingredient from './Ingredient';
 import { RecipeContext } from '../context/RecipeContext';
 
 const Recipe = () => {
@@ -44,6 +45,13 @@ const Recipe = () => {
 
             <h4> Servings: {recipe.servings} </h4>
           </aside>
+      </div>
+      <div className="displayedRecipe__ingredients">
+      <h3>Ingredients</h3>
+      </div>
+      <div className="displayedRecipe__preparation">
+      <h3>Preparation</h3>
+       <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
       </div>
     </div>
   );
