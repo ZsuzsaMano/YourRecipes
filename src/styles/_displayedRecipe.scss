@@ -24,12 +24,23 @@ text-align: right;
     min-height: 20vw;
     @include flex(space-around , center, column);
   }
-  &__preparation{
+  &__cook{
+    @include flex(space-around, center, row);
+    flex-wrap: wrap;
+  }
+  &__preparation, &__ingredients{
     h3{
       padding:0.5em;
     }
+    min-width: 200px;
     text-align: left;
     line-height: 1.5em;
     padding: 1rem;
+    max-width: 600px;
+    align-self: flex-start;
+  }
+  ol{
+    padding: 1rem;
+    list-style: unset;
   }
 }

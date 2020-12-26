@@ -2,11 +2,10 @@
 import React, { useEffect, useContext } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import apiKey from '../apiKey';
-import Ingredient from './Ingredient';
 import { RecipeContext } from '../context/RecipeContext';
 
 const Recipe = () => {
-  const { recipe, setRecipe } = useContext(RecipeContext);
+  const { ingredients, setIngredients, recipe, setRecipe } = useContext(RecipeContext);
   const history = useHistory();
   const goBackHandle = ()=> {
     history.goBack();
@@ -16,6 +15,10 @@ const Recipe = () => {
     getRecipe();
   }, []);
 
+  useEffect(()=> {
+    getIngredients();
+  }, []);
+
   let { id } = useParams();
 
   const getRecipe = async () => {
@@ -23,6 +26,12 @@ const Recipe = () => {
     const data = await response.json();
     console.log(data);
     setRecipe(data);
+  };
+
+  const getIngredients = async () => {
+    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`);
+    const data = await response.json();
+    console.log(data.ingredients);
   };
 
   return (
@@ -46,12 +55,19 @@ const Recipe = () => {
             <h4> Servings: {recipe.servings} </h4>
           </aside>
       </div>
+      <div className="displayedRecipe__cook">
       <div className="displayedRecipe__ingredients">
       <h3>Ingredients</h3>
+      <ol className="displayedRecipe__ingredientlist">
+      {ingredients.map(ingredient=>
+        <li key={ingredient.name}>{ ingredient.amount.metric.value + ' ' + ingredient.amount.metric.unit + ' ' + ingredient.name }</li>
+      )}
+      </ol>
       </div>
       <div className="displayedRecipe__preparation">
       <h3>Preparation</h3>
        <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
+      </div>
       </div>
     </div>
   );
