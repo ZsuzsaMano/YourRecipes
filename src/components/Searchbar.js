@@ -9,11 +9,10 @@ const Searchbar = () => {
 
   return (
     <div className="searchbar">
-    <button className="bookmarksBtn">Bookmarks</button>
      <form  className = "search-form">
       <input className = "search-bar" type ="text" placeholder = "search..." value={query} onChange={updateQuery}/>
      </form>
-     <button className="favoritsBtn">Favorites</button>
+
      </div>
 
   );

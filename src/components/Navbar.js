@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Sidebar } from './Sidebar';
-import Searchbar from '../components/Searchbar';
 import { RecipeContext } from '../context/RecipeContext';
 import { LoginContext } from '../context/LoginContext';
 
@@ -37,7 +36,7 @@ const Navbar = (props) => {
 </ul>
 </nav>
 </div>
-        <Searchbar/>
+
 
       {isLoggedin ? <p className="login__button" onClick={signOut}>Logout</p>
          : <Link to="login" className="login__button">Login</Link>}
