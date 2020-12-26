@@ -10,7 +10,7 @@ const ChatContextProvider = (props) => {
 
     const ref = firebase.firestore().collection('chat');
 
-    //get messages from firestore
+    //get messages from firestore for chat
     const getMessages = () => {
       setLoading(true);
       ref.orderBy('date').onSnapshot((querySnapshot)=> {
