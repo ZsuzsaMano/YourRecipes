@@ -13,14 +13,14 @@
 
 .navbar__menu {
   background: black;
-  height: 80px;
+  height: 60px;
   @include flex(flex-start, center, row);
   z-index: 99;
 }
 
 .menu-bars {
-  margin: 2rem;
-  font-size: 2rem;
+  margin: 1rem;
+  font-size: clamp(1.3rem, 3vw, 2rem);
   background: none;
 
   svg {
@@ -95,26 +95,21 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 3 1 40rem;
-  border-radius: 5px;
+
 }
 
 .search-bar {
   width: 50%;
   border: none;
-  padding: 1em;
+  padding: 0.5em;
   border: 1px solid grey;
+    border-radius: 5px;
 }
 
-.search-button {
-  background: #f7b067;
-  border: none;
-  padding: 1em 2em;
-}
 
 .login__button{
-  margin:1rem;
+  margin-right:1rem;
   color:white;
-  font-size: 1.3rem;
+  font-size:clamp(0.8rem, 2vw, 1.3rem);
   text-decoration: none;
 }
