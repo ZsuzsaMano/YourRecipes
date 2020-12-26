@@ -22,6 +22,7 @@
   margin: 1rem;
   font-size: clamp(1.3rem, 3vw, 2rem);
   background: none;
+  cursor: pointer;
 
   svg {
     fill: white;
@@ -113,4 +114,5 @@ span {
   color:white;
   font-size:clamp(1rem, 2vw, 1.3rem);
   text-decoration: none;
+  cursor: pointer;
 }

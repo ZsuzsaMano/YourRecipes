@@ -1,5 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { createContext, useState, useEffect } from 'react';
 import firebase from '../firebase/firebase';
 
 export const ChatContext = createContext();

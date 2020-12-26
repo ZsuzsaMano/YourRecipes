@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import { LoginContext } from '../context/LoginContext';
 
 const Login = () => {
-  const { sendLogin, name, setName, setIsLoggedIn, loginEmail, setLoginEmail, loginPassword, setLoginPassword } = useContext(LoginContext);
-
-  const handleOnChangeName = e =>
-  setName(e.target.value);
+  const { sendLogin, loginEmail, setLoginEmail, loginPassword, setLoginPassword } = useContext(LoginContext);
 
   const handleOnChangeEmail = e =>
   setLoginEmail(e.target.value);
@@ -18,7 +15,6 @@ const Login = () => {
     <div className = "login">
     <h1>Please Login to continue </h1>
     <form action="" className='login__form'>
-      <input type="text"  placeholder="username" value={name} onChange={handleOnChangeName} required/>
       <input type="text"  placeholder="email" value={loginEmail} onChange={handleOnChangeEmail} required/>
       <input type="password" placeholder="password" value={loginPassword} onChange={handleOnChangePassword} required/>
       <button type="submit" className="submit" onClick = {sendLogin}>Login</button>

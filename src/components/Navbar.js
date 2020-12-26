@@ -8,7 +8,7 @@ import { LoginContext } from '../context/LoginContext';
 
 const Navbar = (props) => {
     const { sidebar, setSidebar } = useContext(RecipeContext);
-    const { name, isLoggedin, signOut } = useContext(LoginContext);
+    const { isLoggedin, signOut } = useContext(LoginContext);
 
     const showsideBar = () => setSidebar(!sidebar);
     return (
