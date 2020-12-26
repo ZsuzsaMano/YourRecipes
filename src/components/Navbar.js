@@ -9,7 +9,7 @@ import { LoginContext } from '../context/LoginContext';
 
 const Navbar = (props) => {
     const { sidebar, setSidebar } = useContext(RecipeContext);
-    const { name, isLoggedin } = useContext(LoginContext);
+    const { name, isLoggedin, signOut } = useContext(LoginContext);
 
     const showsideBar = () => setSidebar(!sidebar);
     return (
@@ -38,9 +38,10 @@ const Navbar = (props) => {
 </nav>
 </div>
         <Searchbar/>
-        <Link to="login" className="login__button">
-      {isLoggedin ? name : 'Login'}
-  </Link>
+
+      {isLoggedin ? <p className="login__button" onClick={signOut}>Logout</p>
+         : <Link to="login" className="login__button">Login</Link>}
+
      </div>
 
     );
