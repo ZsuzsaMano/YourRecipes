@@ -16,8 +16,4 @@ export const Sidebar = [
   path: '/chat',
   icon: <BsIcons.BsChatDots/>,
   cName: 'nav-text private', },
-{ title: 'Login',
-  path: '/login',
-  icon: <AiIcons.AiOutlineLogin/>,
-  cName: 'nav-text', },
 ];

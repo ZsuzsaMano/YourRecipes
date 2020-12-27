@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 @mixin flex($justfy, $align, $direction) {
   display: flex;
   justify-content: $justfy;

@@ -36,8 +36,9 @@ const Navbar = (props) => {
 </ul>
 </nav>
 </div>
-
-
+<Link className="logo" to="/">
+<h1 >Your Recipes</h1>
+</Link>
       {isLoggedin ? <p className="login__button" onClick={signOut}>Logout</p>
          : <Link to="login" className="login__button">Login</Link>}
 

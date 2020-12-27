@@ -91,6 +91,13 @@ span {
   font-size: clamp(0.7rem, 3vw, 1rem);
 }
 
+.logo{
+  font-family: 'Dancing Script', cursive;
+  color:white;
+  letter-spacing: clamp(0.1rem, 1vw, 1rem);
+  text-decoration: none;
+}
+
 .search-form {
   min-height: 7vh;
   display: flex;
