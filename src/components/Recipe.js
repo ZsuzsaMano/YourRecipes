@@ -24,14 +24,13 @@ const Recipe = () => {
   const getRecipe = async () => {
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${apiKey}`);
     const data = await response.json();
-    console.log(data);
     setRecipe(data);
   };
 
   const getIngredients = async () => {
     const response = await fetch(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`);
     const data = await response.json();
-    console.log(data.ingredients);
+    setIngredients(data.ingredients);
   };
 
   return (
