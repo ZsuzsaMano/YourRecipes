@@ -3,7 +3,6 @@ import {
   Link
 } from 'react-router-dom';
 import Ingredient from './Ingredient';
-import ToggleFavorite from './ToggleFavorite';
 import ToggleBookmark from './ToggleBookmark';
 import style from '../styles/recipe.module.css';
 
@@ -32,19 +31,17 @@ const RecipePreview = ({
      <h2 className = {style.title} >
      {title}
      </h2 >
+     <ToggleBookmark
+       id={id}/ >
      <button className = "toggleIngredient"
     onClick = {() => setShowIngredients(!showIngredients)
     } >
     Ingredients
-    < /button>
-
-    <  div className = {style.icons} >
-    < ToggleFavorite / >
+    </button>
     <button className = "goToRecipe" >
     <Link to={'recipe/' + id}>Go to Recipe</Link>
     </button >
-    <ToggleBookmark / >
-    </div>
+
      </div >
      </div >
      </div >
