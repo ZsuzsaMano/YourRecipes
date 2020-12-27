@@ -11,27 +11,27 @@ const Recipe = () => {
     history.goBack();
   };
 
+  let { id } = useParams();
+
   useEffect(() => {
+    const getRecipe = async () => {
+      const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${apiKey}`);
+      const data = await response.json();
+      setRecipe(data);
+    };
+
     getRecipe();
   }, []);
 
   useEffect(()=> {
+    const getIngredients = async () => {
+      const response = await fetch(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`);
+      const data = await response.json();
+      setIngredients(data.ingredients);
+    };
+
     getIngredients();
   }, []);
-
-  let { id } = useParams();
-
-  const getRecipe = async () => {
-    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${apiKey}`);
-    const data = await response.json();
-    setRecipe(data);
-  };
-
-  const getIngredients = async () => {
-    const response = await fetch(`https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`);
-    const data = await response.json();
-    setIngredients(data.ingredients);
-  };
 
   return (
     <div className="displayedRecipe">

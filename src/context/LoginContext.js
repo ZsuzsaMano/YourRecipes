@@ -1,11 +1,9 @@
 import React, { createContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import firebase from '../firebase/firebase';
 
 export const LoginContext = createContext();
 
 const LoginContextProvider = (props) => {
-  const history = useHistory();
   const auth = firebase.auth();
   const db = firebase.firestore();
 
