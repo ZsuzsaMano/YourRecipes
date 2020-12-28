@@ -7,7 +7,7 @@ const ToggleBookmark = ({ id, title, image }) => {
 
   const toggleBookmark = () => {
       toggleSelected(!selected);
-      selected ?  setMyBookmarkedRecipes(myBookmarkedRecipies.filter(item => item !== { id: id, title: title, image: image }))
+      selected ?  setMyBookmarkedRecipes(myBookmarkedRecipies.filter(item => item.id !== id))
       : setMyBookmarkedRecipes(myRecipes=>[...myRecipes, { id: id, title: title, image: image }]);
     };
 
