@@ -32,12 +32,14 @@ const RecipePreview = ({
      {title}
      </h2 >
      <ToggleBookmark
-       id={id}/ >
-     <button className = "toggleIngredient"
+       id={id}
+       title={title}
+       image={image}/ >
+  {ingredients.length > 0 ?  <button className = "toggleIngredient"
     onClick = {() => setShowIngredients(!showIngredients)
     } >
     Ingredients
-    </button>
+    </button> : ''}
     <button className = "goToRecipe" >
     <Link to={'recipe/' + id}>Go to Recipe</Link>
     </button >

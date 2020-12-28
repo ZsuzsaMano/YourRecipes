@@ -1,13 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 
-const ToggleBookmark = ({ id }) => {
+const ToggleBookmark = ({ id, title, image }) => {
 
-  const { myBookmarkedRecipiesId, setMyBookmarkedRecipesId } = useContext(LoginContext);
+  const { myBookmarkedRecipies, setMyBookmarkedRecipes } = useContext(LoginContext);
 
   const toggleBookmark = () => {
       toggleSelected(!selected);
-      selected ?  setMyBookmarkedRecipesId(myBookmarkedRecipiesId.filter(item => item !== id)) : setMyBookmarkedRecipesId(myRecipes=>[...myRecipes, id]);
+      selected ?  setMyBookmarkedRecipes(myBookmarkedRecipies.filter(item => item !== { id: id, title: title, image: image }))
+      : setMyBookmarkedRecipes(myRecipes=>[...myRecipes, { id: id, title: title, image: image }]);
     };
 
   const [selected, toggleSelected] = useState(false);

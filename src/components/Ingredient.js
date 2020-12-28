@@ -15,8 +15,7 @@ const Ingredient = ({
     onClick = {() => setShowIngredients(!showIngredients)
     } > {ingredients.map((ingredient, index) => (<
         li key = {index}
-        className = "ingredient" > {
-}
+        className = "ingredient" >
 {ingredient.originalString}
  < /li >))
     } </ul>

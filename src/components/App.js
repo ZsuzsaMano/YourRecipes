@@ -31,6 +31,9 @@ function App() {
       <Route exact path={`/recipe/:id`}>
     <Recipe/>
     </Route>
+    <Route path="/myrecipes" render = {() => {
+    return isLoggedin ? <MyRecipes/> : <Redirect to="/login"/>; }
+      }/>
       <Route exact path="/register"render = {() => {
       return !isLoggedin ? <Register/> : <Redirect to="/chat"/>; }
         }/>
@@ -42,9 +45,7 @@ function App() {
       return isLoggedin ? <Chat/> : <Redirect to="/login"/>; }
         }/>
         </ChatContextProvider>
-        <Route path="/myrecipes" render = {() => {
-        return isLoggedin ? <MyRecipes/> : <Redirect to="/login"/>; }
-          }/>
+
     </Switch>
 </Router>
 

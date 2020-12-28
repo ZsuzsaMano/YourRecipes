@@ -16,7 +16,7 @@ const LoginContextProvider = (props) => {
   const [regpassword2, setRegpassword2] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const [myBookmarkedRecipiesId, setMyBookmarkedRecipesId] = useState([]);
+  const [myBookmarkedRecipies, setMyBookmarkedRecipes] = useState([]);
 
   //register user with email, name, psw to firebase and login
   const sendRegistration = e => {
@@ -68,7 +68,7 @@ const LoginContextProvider = (props) => {
   };
 
   return (
-    <LoginContext.Provider value={{ myBookmarkedRecipiesId, setMyBookmarkedRecipesId, signOut, sendLogin,  loginEmail, setLoginEmail, loginPassword, setLoginPassword, sendRegistration, name, setName, isLoggedin, setIsLoggedIn, regname, setRegname, regemail, setRegemail, regpassword, setRegpassword, regpassword2, setRegpassword2 }}>
+    <LoginContext.Provider value={{ myBookmarkedRecipies, setMyBookmarkedRecipes, signOut, sendLogin,  loginEmail, setLoginEmail, loginPassword, setLoginPassword, sendRegistration, name, setName, isLoggedin, setIsLoggedIn, regname, setRegname, regemail, setRegemail, regpassword, setRegpassword, regpassword2, setRegpassword2 }}>
       {props.children}
     </LoginContext.Provider>
   );
