@@ -35,10 +35,10 @@ function App() {
     return isLoggedin ? <MyRecipes/> : <Redirect to="/login"/>; }
       }/>
       <Route exact path="/register"render = {() => {
-      return !isLoggedin ? <Register/> : <Redirect to="/chat"/>; }
+      return !isLoggedin ? <Register/> : <Redirect to="/"/>; }
         }/>
       <Route exact path="/login" render = {() => {
-      return !isLoggedin ? <LoginPage/> : <Redirect to="/chat"/>; }
+      return !isLoggedin ? <LoginPage/> : <Redirect to="/"/>; }
         }/>
       <ChatContextProvider>
       <Route exact path="/chat"  render = {() => {
