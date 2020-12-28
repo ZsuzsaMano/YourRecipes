@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import firebase from '../firebase/firebase';
 
 export const LoginContext = createContext();
@@ -42,8 +42,11 @@ const LoginContextProvider = (props) => {
       //get name of user, and save it
       setName(user.displayName);
       setUserId(user.uid);
+      sendUserData();
     }else {
       setIsLoggedIn(false);
+      setName('');
+      setUserId('');
     }});
 
   const sendLogin = e => {
@@ -51,7 +54,7 @@ const LoginContextProvider = (props) => {
       auth.signInWithEmailAndPassword(loginEmail, loginPassword)
       .then(cred => {
         //get the id of the recipes the user bookmarked
-        db.collection('users').doc(cred.user.uid).get().then(doc=>console.log(doc.data()));
+        db.collection('users').doc(cred.user.uid).get().then(doc=>setMyBookmarkedRecipes(doc.data().myrecipes));
       });
     };
 
@@ -62,13 +65,14 @@ const LoginContextProvider = (props) => {
 
   //create a doc with the id = userId, and add recipeId inside
   const sendUserData = () => {
-    db.collection('users').doc(userId).set({
-      recipeId: '716293',
-    });
+    if (userId) {
+      db.collection('users').doc(userId).set({
+        myrecipes: myBookmarkedRecipies,
+      });}
   };
 
   return (
-    <LoginContext.Provider value={{ myBookmarkedRecipies, setMyBookmarkedRecipes, signOut, sendLogin,  loginEmail, setLoginEmail, loginPassword, setLoginPassword, sendRegistration, name, setName, isLoggedin, setIsLoggedIn, regname, setRegname, regemail, setRegemail, regpassword, setRegpassword, regpassword2, setRegpassword2 }}>
+    <LoginContext.Provider value={{ myBookmarkedRecipies, setMyBookmarkedRecipes, signOut, sendLogin,  loginEmail, setLoginEmail, loginPassword, setLoginPassword, sendRegistration, name, userId, setName, isLoggedin, setIsLoggedIn, regname, setRegname, regemail, setRegemail, regpassword, setRegpassword, regpassword2, setRegpassword2 }}>
       {props.children}
     </LoginContext.Provider>
   );
