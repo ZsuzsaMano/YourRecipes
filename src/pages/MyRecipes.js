@@ -4,7 +4,6 @@ import RecipePreview from '../components/RecipePreview';
 
 const MyRecipes = (props) => {
   const { myBookmarkedRecipies } = useContext(LoginContext);
-
   return (
   <div className = "myrecipes">
     < div className = "recipes" > {
@@ -14,6 +13,7 @@ const MyRecipes = (props) => {
         title = {recipe.title}
         image = {recipe.image}
         ingredients ={[]}
+
         />))
       } < /div>
       </div>

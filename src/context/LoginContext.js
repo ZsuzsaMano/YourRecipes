@@ -42,7 +42,6 @@ const LoginContextProvider = (props) => {
       //get name of user, and save it
       setName(user.displayName);
       setUserId(user.uid);
-      sendUserData();
     }else {
       setIsLoggedIn(false);
       setName('');
@@ -70,6 +69,10 @@ const LoginContextProvider = (props) => {
         myrecipes: myBookmarkedRecipies,
       });}
   };
+
+  useEffect(()=> {
+    sendUserData();
+  }, [myBookmarkedRecipies]);
 
   return (
     <LoginContext.Provider value={{ myBookmarkedRecipies, setMyBookmarkedRecipes, signOut, sendLogin,  loginEmail, setLoginEmail, loginPassword, setLoginPassword, sendRegistration, name, userId, setName, isLoggedin, setIsLoggedIn, regname, setRegname, regemail, setRegemail, regpassword, setRegpassword, regpassword2, setRegpassword2 }}>
