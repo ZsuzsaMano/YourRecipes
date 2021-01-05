@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { ChatContext } from '../context/ChatContext';
 import { LoginContext } from '../context/LoginContext';
+import firebase from '../firebase/firebase';
 
 const ChatInput = (props) => {
   const { inputmessage, setInputmessage, ref } = useContext(ChatContext);
   const { name } = useContext(LoginContext);
+
+  const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
   const sendMessage = e => {
     const dateNow = new Date().toUTCString();
@@ -13,6 +16,7 @@ const ChatInput = (props) => {
       name: name,
       message: inputmessage,
       date: dateNow,
+      sentAt: timestamp(),
     });
     setInputmessage('');
   };

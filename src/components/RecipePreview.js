@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Link
 } from 'react-router-dom';
@@ -12,7 +12,6 @@ const RecipePreview = ({
   ingredients,
   id,
 }) => {
-
   const [showIngredients, setShowIngredients] = useState(false);
 
   return (<div className = {style.recipe} >
@@ -31,10 +30,10 @@ const RecipePreview = ({
      <h2 className = {style.title} >
      {title}
      </h2 >
-     <ToggleBookmark
+  <ToggleBookmark
        id={id}
        title={title}
-       image={image}/ >
+       image={image}/ > 
   {ingredients.length > 0 ?  <button className = "toggleIngredient"
     onClick = {() => setShowIngredients(!showIngredients)
     } >
