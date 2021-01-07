@@ -7,7 +7,7 @@ const MyRecipes = (props) => {
   return (
   <div className = "myrecipes">
     < div className = "recipes" > {
-    myBookmarkedRecipies.map((recipe) => (< RecipePreview
+    myBookmarkedRecipies.reverse().map((recipe) => (< RecipePreview
        key={recipe.id}
        id={recipe.id}
         title = {recipe.title}
