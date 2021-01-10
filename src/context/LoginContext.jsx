@@ -17,38 +17,38 @@ const LoginContextProvider = (props) => {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [myBookmarkedRecipies, setMyBookmarkedRecipes] = useState([]);
-
+  const [errorMessage, setErrorMessage] = useState('');
   //register user with email, name, psw to firebase and login
   const sendRegistration = e => {
       e.preventDefault();
       //check if same psw was given both times at registration
       if (regpassword === regpassword2) {
         auth.createUserWithEmailAndPassword(regemail, regpassword).then(function (result) {
-          updateProfile(result.user)
+          updateProfile(result.user);
         }).catch(function (error) {
-          console.log(error);
+          setErrorMessage(error.message);
         });
       } else {
-        console.log('passwords dont match');
+        setErrorMessage('passwords don\'t match');
       }
     };
-    const updateProfile = (user) => {
-      user.updateProfile({
-        displayName: regname,
-      }).then(() => {
-        // after updating profile you need to manually set the name and userId because the function onAuthStateChanged
-        //is not waiting for the profile to be updated and it runs before you add the displayName
-        const currentUser = auth.currentUser
-        setIsLoggedIn(true);
-        setName(currentUser.displayName);
-        setUserId(currentUser.uid);
-      }).catch(function(error) {
-        console.log('error', error)
-      });
-    }
+
+  const updateProfile = (user) => {
+    user.updateProfile({
+      displayName: regname,
+    }).then(() => {
+      // after updating profile you need to manually set the name and userId because the function onAuthStateChanged
+      //is not waiting for the profile to be updated and it runs before you add the displayName
+      const currentUser = auth.currentUser;
+      setIsLoggedIn(true);
+      setName(currentUser.displayName);
+      setUserId(currentUser.uid);
+    }).catch(function (error) {
+      console.log('error', error);
+    });
+  };
   //check user status, if no user logged in, it returns null
   auth.onAuthStateChanged(user=> {
-    console.log('user', user)
     if (user) {
       setIsLoggedIn(true);
       //get name of user, and save it
@@ -58,7 +58,8 @@ const LoginContextProvider = (props) => {
       setIsLoggedIn(false);
       setName('');
       setUserId('');
-    }});
+    }
+  });
 
   const sendLogin = e => {
       e.preventDefault();
@@ -66,7 +67,7 @@ const LoginContextProvider = (props) => {
       .then(cred => {
         //get the id of the recipes the user bookmarked
         db.collection('users').doc(cred.user.uid).get().then(doc=>setMyBookmarkedRecipes(doc.data().myrecipes));
-      });
+      }).catch(err=>setErrorMessage(err.message));
     };
 
   const signOut = e => {
@@ -87,7 +88,7 @@ const LoginContextProvider = (props) => {
   }, [myBookmarkedRecipies]);
 
   return (
-    <LoginContext.Provider value={{ myBookmarkedRecipies, setMyBookmarkedRecipes, signOut, sendLogin,  loginEmail, setLoginEmail, loginPassword, setLoginPassword, sendRegistration, name, userId, setName, isLoggedin, setIsLoggedIn, regname, setRegname, regemail, setRegemail, regpassword, setRegpassword, regpassword2, setRegpassword2 }}>
+    <LoginContext.Provider value={{ errorMessage, myBookmarkedRecipies, setMyBookmarkedRecipes, signOut, sendLogin,  loginEmail, setLoginEmail, loginPassword, setLoginPassword, sendRegistration, name, userId, setName, isLoggedin, setIsLoggedIn, regname, setRegname, regemail, setRegemail, regpassword, setRegpassword, regpassword2, setRegpassword2 }}>
       {props.children}
     </LoginContext.Provider>
   );

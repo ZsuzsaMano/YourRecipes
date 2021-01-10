@@ -9,7 +9,7 @@ const ChatInput = (props) => {
 
   const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-  const sendMessage = e => {
+  const sendMessage = (e) => {
     const dateNow = new Date().toUTCString();
     e.preventDefault();
     ref.add({
@@ -21,13 +21,21 @@ const ChatInput = (props) => {
     setInputmessage('');
   };
 
-  const handleOnChangeInputMessage = e => {
-    setInputmessage(e.target.value);};
+  const handleOnChangeInputMessage = (e) => {
+    setInputmessage(e.target.value);
+  };
 
   return (
     <form action="" className="chatinput">
-      <textarea name="chatinput" id="chatinput" value={inputmessage} onChange={handleOnChangeInputMessage}></textarea>
-      <button type="submit" onClick={sendMessage}>Send</button>
+      <textarea
+        name="chatinput"
+        id="chatinput"
+        value={inputmessage}
+        onChange={handleOnChangeInputMessage}
+      ></textarea>
+      <button type="submit" onClick={sendMessage}>
+        Send
+      </button>
     </form>
   );
 };
