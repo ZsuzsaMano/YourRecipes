@@ -28,18 +28,22 @@ const ToggleBookmark = ({ id, title, image }) => {
   if (isLoggedin) {
     return (
       <div className="bookmark">
-        <svg
-          className={`toggleBookmark ${
-            selected ? 'toggleBookmark-active' : ''
-          }`}
-          onClick={toggleBookmark}
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M14.568.075c2.202 1.174 5.938 4.883 7.432 6.881-1.286-.9-4.044-1.657-6.091-1.179.222-1.468-.185-4.534-1.341-5.702zm-.824 7.925s1.522-8-3.335-8h-.409v12l-2.5-2.634-2.5 2.634v-12h-3v24h20v-13c0-3.419-5.247-3.745-8.256-3z" />
-        </svg>
+
+           <svg  xmlns="http://www.w3.org/2000/svg"
+ id="svg1" className={`toggleBookmark ${
+   selected ? 'toggleBookmark-active' : ''
+ }`}
+ onClick={toggleBookmark}
+ version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  width="36"
+  height="36"
+  viewBox="0 0 475.82 442.01"
+  version="1.0">
+             <g id="layer1" transform="translate(-134.07 -225.8)">
+               <path id="path7" d="m263.42 235.15c-66.24 0-120 53.76-120 120 0 134.75 135.93 170.08 228.56 303.3 87.57-132.4 228.56-172.85 228.56-303.3 0-66.24-53.76-120-120-120-48.05 0-89.4 28.37-108.56 69.18-19.16-40.81-60.52-69.18-108.56-69.18z" stroke-width="18.7" />
+             </g>
+           </svg>
         <p className="loginToBookmark">Bookmark Recipe</p>{' '}
       </div>
     );
