@@ -30,7 +30,7 @@ Hover on a recipe, and check ingredients, or go to full recipe description
 If you login, you can join the chat.
 Bookmark a recipe, and look it up later under MyRecipes menupoint.
 
-***
+
 ### Menu
 
 <p align="center">
@@ -41,6 +41,8 @@ Bookmark a recipe, and look it up later under MyRecipes menupoint.
 <br>
 
 ### Main
+
+Search by term, decide number of result, check recipes ingerdients. If you are logged in, you can bookmark recipe and save it for later by clicking on the heart.
 <p align="center">
   <a href="https://your-recipe.netlify.app/">
     <img src="./gif/main.gif" alt="prints" >
@@ -49,17 +51,23 @@ Bookmark a recipe, and look it up later under MyRecipes menupoint.
 <br>
 
 ### Go to Recipe
+
+On the back of each picture there is a link to a detailed recipe. 
+
 <p align="center">
   <a href="https://your-recipe.netlify.app/">
-    <img src="./gif/paintings.gif" alt="paintings" >
+    <img src="./gif/recipe.gif" alt="paintings" >
   </a>
 </p>
 <br>
 
 ### My Recipes
+
+The collection of your favorite recipes.
+
 <p align="center">
   <a href="https://your-recipe.netlify.app/">
-    <img src="./gif/sculptures.gif" alt="sculptures" >
+    <img src="./gif/recipe.gif" alt="sculptures" >
   </a>
 </p>
 <br>
