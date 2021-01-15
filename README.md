@@ -45,18 +45,18 @@ Bookmark a recipe, and look it up later under MyRecipes menupoint.
 Search by term, decide number of result, check recipes ingerdients. If you are logged in, you can bookmark recipe and save it for later by clicking on the heart.
 <p align="center">
   <a href="https://your-recipe.netlify.app/">
-    <img src="./gif/main.gif" alt="prints" >
+    <img src="./gif/main.gif" alt="main page" >
   </a>
 </p>
 <br>
 
 ### Go to Recipe
 
-On the back of each picture there is a link to a detailed recipe. 
+On the back of each picture there is a link to a detailed recipe.
 
 <p align="center">
   <a href="https://your-recipe.netlify.app/">
-    <img src="./gif/recipe.gif" alt="paintings" >
+    <img src="./gif/recipe.gif" alt="detailed recipe" >
   </a>
 </p>
 <br>
@@ -67,7 +67,7 @@ The collection of your favorite recipes.
 
 <p align="center">
   <a href="https://your-recipe.netlify.app/">
-    <img src="./gif/recipe.gif" alt="sculptures" >
+    <img src="./gif/myrecipe.png" alt="my recipes" >
   </a>
 </p>
 <br>
@@ -75,7 +75,7 @@ The collection of your favorite recipes.
 ### Chat
 <p align="center">
   <a href="http://rostbrand.com/">
-    <img src="./gif/design.gif" alt="design" >
+    <img src="./gif/design.gif" alt="chat" >
   </a>
 </p>
 <br>
