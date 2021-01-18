@@ -61,6 +61,17 @@ On the back of each picture there is a link to a detailed recipe.
 </p>
 <br>
 
+### Login
+
+Login to see your saved recipes, and chat with other users.
+
+<p align="center">
+  <a href="https://your-recipe.netlify.app/">
+    <img src="./gif/login.png" alt="login" >
+  </a>
+</p>
+<br>
+
 ### My Recipes
 
 The collection of your favorite recipes.
@@ -73,9 +84,12 @@ The collection of your favorite recipes.
 <br>
 
 ### Chat
+
+You can chat with other users.
+
 <p align="center">
-  <a href="http://rostbrand.com/">
-    <img src="./gif/design.gif" alt="chat" >
+  <a href="https://your-recipe.netlify.app/">
+    <img src="./gif/chat.png" alt="chat" >
   </a>
 </p>
 <br>
