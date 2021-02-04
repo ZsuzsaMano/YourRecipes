@@ -1,30 +1,38 @@
-import React, { useContext } from 'react';
-import { LoginContext } from '../context/LoginContext';
-import RecipePreview from '../components/RecipePreview';
+import React, { useContext, useEffect } from "react";
+import { LoginContext } from "../context/LoginContext";
+import RecipePreview from "../components/RecipePreview";
 
-const MyRecipes = (props) => {
-  const { myBookmarkedRecipies } = useContext(LoginContext);
-  if (myBookmarkedRecipies.length > 0)
-  {  return (
-    <div className = "myrecipes">
-    < div className = "recipes" > {
-      myBookmarkedRecipies.reverse().map((recipe) => (< RecipePreview
-         key={recipe.id}
-         id={recipe.id}
-          title = {recipe.title}
-          image = {recipe.image}
-          ingredients ={[]}
+const MyRecipes = props => {
+  const { myBookmarkedRecipies, getMyBookmarkedRecipes, userId } = useContext(
+    LoginContext
+  );
 
-          />))
-        } < /div>
+  useEffect(() => {
+    getMyBookmarkedRecipes(userId);
+  }, []);
+  if (myBookmarkedRecipies.length > 0) {
+    return (
+      <div className="myrecipes">
+        <div className="recipes">
+          {" "}
+          {myBookmarkedRecipies.reverse().map(recipe => (
+            <RecipePreview
+              key={recipe.id}
+              id={recipe.id}
+              title={recipe.title}
+              image={recipe.image}
+              ingredients={[]}
+            />
+          ))}{" "}
+        </div>
       </div>
-
-    );}else {
+    );
+  } else {
     return (
       <div className="noRecipe">
-  <p className="noRecipe__p">
-      You dont have any bookmarked recipes</p>
-  </div>);
+        <p className="noRecipe__p">You dont have any bookmarked recipes</p>
+      </div>
+    );
   }
 };
 
