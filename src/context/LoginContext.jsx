@@ -99,6 +99,10 @@ const LoginContextProvider = props => {
     }
   };
 
+  useEffect(() => {
+    sendUserData();
+  }, [myBookmarkedRecipies]);
+
   const getMyBookmarkedRecipes = user => {
     db.collection("users")
       .doc(user)
