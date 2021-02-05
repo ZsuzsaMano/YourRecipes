@@ -87,6 +87,18 @@ const LoginContextProvider = props => {
     firebase.auth().signOut();
   };
 
+  //create a doc with the id = userId, and add recipeId inside
+  const sendUserData = () => {
+    console.log("sending to firebase");
+    if (userId) {
+      db.collection("users")
+        .doc(userId)
+        .set({
+          myrecipes: myBookmarkedRecipies
+        });
+    }
+  };
+
   const getMyBookmarkedRecipes = user => {
     db.collection("users")
       .doc(user)
@@ -122,7 +134,7 @@ const LoginContextProvider = props => {
         setRegpassword,
         regpassword2,
         setRegpassword2,
-        db
+        sendUserData
       }}
     >
       {props.children}
