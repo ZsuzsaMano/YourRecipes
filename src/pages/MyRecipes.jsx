@@ -3,13 +3,8 @@ import { LoginContext } from "../context/LoginContext";
 import RecipePreview from "../components/RecipePreview";
 
 const MyRecipes = props => {
-  const { myBookmarkedRecipies, getMyBookmarkedRecipes, userId } = useContext(
-    LoginContext
-  );
+  const { myBookmarkedRecipies } = useContext(LoginContext);
 
-  useEffect(() => {
-    getMyBookmarkedRecipes(userId);
-  }, []);
   if (myBookmarkedRecipies.length > 0) {
     return (
       <div className="myrecipes">
