@@ -45,37 +45,39 @@ const LoginContextProvider = props => {
         // after updating profile you need to manually set the name and userId because the function onAuthStateChanged
         //is not waiting for the profile to be updated and it runs before you add the displayName
         const currentUser = auth.currentUser;
-        setIsLoggedIn(true);
-        setName(currentUser.displayName);
-        setUserId(currentUser.uid);
+        setUser(currentUser);
       })
       .catch(function(error) {
         console.log("error", error);
       });
   };
   //check user status, if no user logged in, it returns null
-  auth.onAuthStateChanged(user => {
-    if (user) {
-      setIsLoggedIn(true);
-      //get name of user, and save it
-      setName(user.displayName);
-      setUserId(user.uid);
-    } else {
-      setIsLoggedIn(false);
-      setName("");
-      setUserId("");
-    }
-  });
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        setUser(user);
+      } else {
+        setIsLoggedIn(false);
+        setName("");
+        setUserId("");
+      }
+    });
+  }, []);
+
+  const setUser = user => {
+    setIsLoggedIn(true);
+    //get name of user, and save it
+    setName(user.displayName);
+    setUserId(user.uid);
+    getMyBookmarkedRecipes(user.uid);
+  };
 
   const sendLogin = e => {
     e.preventDefault();
     auth
       .signInWithEmailAndPassword(loginEmail, loginPassword)
       .then(cred => {
-        console.log("signed in");
-        //get the id of the recipes the user bookmarked
-        // db.collection('users').doc(cred.user.uid).get()
-        // .then(doc=>setMyBookmarkedRecipes(doc.data().myrecipes));
+        setUser(cred.user);
       })
       .catch(err => setErrorMessage(err.message));
   };
@@ -83,18 +85,6 @@ const LoginContextProvider = props => {
   const signOut = e => {
     e.preventDefault();
     firebase.auth().signOut();
-  };
-
-  //create a doc with the id = userId, and add recipeId inside
-  const sendUserData = () => {
-    console.log("sending to firebase");
-    if (userId) {
-      db.collection("users")
-        .doc(userId)
-        .set({
-          myrecipes: myBookmarkedRecipies
-        });
-    }
   };
 
   const getMyBookmarkedRecipes = user => {
@@ -132,7 +122,7 @@ const LoginContextProvider = props => {
         setRegpassword,
         regpassword2,
         setRegpassword2,
-        sendUserData
+        db
       }}
     >
       {props.children}
