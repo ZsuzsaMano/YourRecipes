@@ -1,13 +1,13 @@
 //main: App.scss
 
 .mainbox {
-  height: 90vh;
-  overflow-y:scroll;
+  height: 75vh;
+  overflow-y: scroll;
 }
 
 .chatpage {
   background: url("../img/chatBG.png");
-  width: clamp(200px, 80%, 800px);
+  width: clamp(200px, 100%, 700px);
   height: clamp(500px, 90%, 800px);
   margin: auto;
   background-size: contain;
@@ -17,7 +17,7 @@
   background: white;
   padding: 1rem;
   margin: 1rem;
-  width: clamp(150px, 60%, 400px) ;
+  width: clamp(150px, 60%, 400px);
   border-radius: 5px;
   &__name {
     font-weight: bolder;
@@ -34,28 +34,28 @@
   }
 }
 
-.mybubble{
+.mybubble {
   position: relative;
   left: 20%;
   background-color: rgb(246, 228, 175);
 }
 
-.chatinput{
+.chatinput {
   background: black;
   min-height: 4rem;
-  @include flex (space-around, center, row);
-  textarea{
+  @include flex(space-around, center, row);
+  textarea {
     width: 80%;
     min-height: 4rem;
     padding: 0.4rem;
-    margin:0.2rem;
+    margin: 0.2rem;
     border-radius: 5px;
   }
-  button{
-    border:none;
+  button {
+    border: none;
     background: white;
     padding: 0.5em;
-    margin:1rem;
+    margin: 1rem;
     border-radius: 5px;
   }
 }
