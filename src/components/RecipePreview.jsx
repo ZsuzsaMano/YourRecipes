@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Ingredient from './Ingredient';
-import ToggleBookmark from './ToggleBookmark';
-import style from '../styles/recipe.module.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Ingredient from "./Ingredient";
+import ToggleBookmark from "./ToggleBookmark";
+import style from "../styles/recipe.module.css";
 
 const RecipePreview = ({ title, image, ingredients, id }) => {
   const [showIngredients, setShowIngredients] = useState(false);
@@ -17,7 +17,7 @@ const RecipePreview = ({ title, image, ingredients, id }) => {
               <div className="flip_box__front">
                 <img
                   src={image}
-                  alt={'Sorry, but no image of ' + title}
+                  alt={"Sorry, but no image of " + title}
                   className={image ? style.image : style.alt}
                 />
               </div>
@@ -29,13 +29,13 @@ const RecipePreview = ({ title, image, ingredients, id }) => {
                     className="toggleIngredient"
                     onClick={() => setShowIngredients(!showIngredients)}
                   >
-                    Ingredients{' '}
+                    Ingredients{" "}
                   </button>
                 ) : (
-                  ''
+                  ""
                 )}
                 <button className="goToRecipe">
-                  <Link to={'recipe/' + id}>Go to Recipe</Link>
+                  <Link to={"recipe/" + id}>Go to Recipe</Link>
                 </button>
               </div>
             </div>

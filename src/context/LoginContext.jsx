@@ -89,7 +89,6 @@ const LoginContextProvider = props => {
 
   //create a doc with the id = userId, and add recipeId inside
   const sendUserData = () => {
-    console.log("sending to firebase");
     if (userId) {
       db.collection("users")
         .doc(userId)

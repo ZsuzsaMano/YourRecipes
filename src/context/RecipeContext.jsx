@@ -1,10 +1,10 @@
-import React, { createContext, useState, useEffect } from 'react';
-import apiKey from '../apiKey';
+import React, { createContext, useState, useEffect } from "react";
+import apiKey from "../apiKey";
 
 export const RecipeContext = createContext();
 
-const RecipeContextProvider = (props) => {
-  const [query, setQuery] = useState('vegetarian');
+const RecipeContextProvider = props => {
+  const [query, setQuery] = useState("vegetarian");
   const [recipes, setRecipes] = useState([]);
   const [sidebar, setSidebar] = useState(false);
   const [ingredients, setIngredients] = useState([]);
@@ -38,7 +38,7 @@ const RecipeContextProvider = (props) => {
         query,
         setQuery,
         setNrOfRecipes,
-        nrOfRecipes,
+        nrOfRecipes
       }}
     >
       {props.children}

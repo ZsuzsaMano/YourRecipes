@@ -1,27 +1,27 @@
-import React, { useContext } from 'react';
-import { ChatContext } from '../context/ChatContext';
-import { LoginContext } from '../context/LoginContext';
-import firebase from '../firebase/firebase';
+import React, { useContext } from "react";
+import { ChatContext } from "../context/ChatContext";
+import { LoginContext } from "../context/LoginContext";
+import firebase from "../firebase/firebase";
 
-const ChatInput = (props) => {
+const ChatInput = props => {
   const { inputmessage, setInputmessage, ref } = useContext(ChatContext);
   const { name } = useContext(LoginContext);
 
   const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-  const sendMessage = (e) => {
+  const sendMessage = e => {
     const dateNow = new Date().toUTCString();
     e.preventDefault();
     ref.add({
       name: name,
       message: inputmessage,
       date: dateNow,
-      sentAt: timestamp(),
+      sentAt: timestamp()
     });
-    setInputmessage('');
+    setInputmessage("");
   };
 
-  const handleOnChangeInputMessage = (e) => {
+  const handleOnChangeInputMessage = e => {
     setInputmessage(e.target.value);
   };
 

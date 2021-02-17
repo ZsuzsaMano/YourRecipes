@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { Sidebar } from './Sidebar';
-import { RecipeContext } from '../context/RecipeContext';
-import { LoginContext } from '../context/LoginContext';
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import { Sidebar } from "./Sidebar";
+import { RecipeContext } from "../context/RecipeContext";
+import { LoginContext } from "../context/LoginContext";
 
-const Navbar = (props) => {
+const Navbar = props => {
   const { sidebar, setSidebar } = useContext(RecipeContext);
   const { isLoggedin, signOut } = useContext(LoginContext);
 
@@ -17,7 +17,7 @@ const Navbar = (props) => {
         <button className="menu-bars">
           <FaIcons.FaBars onClick={showsideBar} />
         </button>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showsideBar}>
             <li className="navbar-toggle">
               <button className="menu-bars">
@@ -30,7 +30,7 @@ const Navbar = (props) => {
                   <NavLink
                     exact
                     to={item.path}
-                    activeStyle={{ textDecoration: 'underline' }}
+                    activeStyle={{ textDecoration: "underline" }}
                   >
                     {item.icon} <span>{item.title}</span>
                   </NavLink>

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Ingredient = ({ ingredients, setShowIngredients, showIngredients }) => {
   const ulStyle = {
-    display: showIngredients ? 'block' : 'none',
+    display: showIngredients ? "block" : "none"
   };
 
   return (
@@ -11,12 +11,12 @@ const Ingredient = ({ ingredients, setShowIngredients, showIngredients }) => {
       style={ulStyle}
       onClick={() => setShowIngredients(!showIngredients)}
     >
-      {' '}
+      {" "}
       {ingredients.map((ingredient, index) => (
         <li key={index} className="ingredient">
           {ingredient.originalString}
         </li>
-      ))}{' '}
+      ))}{" "}
     </ul>
   );
 };

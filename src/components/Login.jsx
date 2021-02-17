@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { LoginContext } from '../context/LoginContext';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { LoginContext } from "../context/LoginContext";
 
 const Login = () => {
   const {
@@ -9,12 +9,12 @@ const Login = () => {
     loginEmail,
     setLoginEmail,
     loginPassword,
-    setLoginPassword,
+    setLoginPassword
   } = useContext(LoginContext);
 
-  const handleOnChangeEmail = (e) => setLoginEmail(e.target.value);
+  const handleOnChangeEmail = e => setLoginEmail(e.target.value);
 
-  const handleOnChangePassword = (e) => setLoginPassword(e.target.value);
+  const handleOnChangePassword = e => setLoginPassword(e.target.value);
 
   return (
     <div className="login">

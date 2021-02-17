@@ -1,13 +1,13 @@
-import React from 'react';
-import ChatMainBox from '../components/ChatMainBox';
-import ChatInput from '../components/ChatInput';
+import React from "react";
+import ChatMainBox from "../components/ChatMainBox";
+import ChatInput from "../components/ChatInput";
 
-const Chat = (props) => {
+const Chat = props => {
   return (
     <div className="chatpage">
-  <ChatMainBox/>
-  <ChatInput/>
-</div>
+      <ChatMainBox />
+      <ChatInput />
+    </div>
   );
 };
 

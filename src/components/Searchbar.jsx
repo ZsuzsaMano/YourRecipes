@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { RecipeContext } from '../context/RecipeContext';
+import React, { useContext } from "react";
+import { RecipeContext } from "../context/RecipeContext";
 
 const Searchbar = () => {
   const { query, setQuery, nrOfRecipes, setNrOfRecipes } = useContext(
     RecipeContext
   );
-  const updateQuery = (e) => {
+  const updateQuery = e => {
     setQuery(e.target.value);
   };
 
@@ -24,7 +24,7 @@ const Searchbar = () => {
           type="number"
           placeholder="nr"
           value={nrOfRecipes}
-          onChange={(e) => {
+          onChange={e => {
             setNrOfRecipes(e.target.value);
           }}
         />

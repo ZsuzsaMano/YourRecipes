@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { LoginContext } from '../context/LoginContext';
+import React, { useContext } from "react";
+import { LoginContext } from "../context/LoginContext";
 
 const Register = () => {
   const {
@@ -12,16 +12,16 @@ const Register = () => {
     regpassword,
     setRegpassword,
     regpassword2,
-    setRegpassword2,
+    setRegpassword2
   } = useContext(LoginContext);
 
-  const handleChangeName = (e) => setRegname(e.target.value);
+  const handleChangeName = e => setRegname(e.target.value);
 
-  const handleChangeEmail = (e) => setRegemail(e.target.value);
+  const handleChangeEmail = e => setRegemail(e.target.value);
 
-  const handleChangePassword = (e) => setRegpassword(e.target.value);
+  const handleChangePassword = e => setRegpassword(e.target.value);
 
-  const handleChangePassword2 = (e) => setRegpassword2(e.target.value);
+  const handleChangePassword2 = e => setRegpassword2(e.target.value);
 
   return (
     <div className="register">

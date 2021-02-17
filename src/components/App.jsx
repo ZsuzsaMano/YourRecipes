@@ -1,22 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
-} from 'react-router-dom';
-import Recipe from './Recipe';
-import Navbar from './Navbar';
-import LoginPage from '../pages/LoginPage';
-import Home from '../pages/Home';
-import Chat from '../pages/Chat';
-import MyRecipes from '../pages/MyRecipes';
-import Register from './Register';
+  Redirect
+} from "react-router-dom";
+import Recipe from "./Recipe";
+import Navbar from "./Navbar";
+import LoginPage from "../pages/LoginPage";
+import Home from "../pages/Home";
+import Chat from "../pages/Chat";
+import MyRecipes from "../pages/MyRecipes";
+import Register from "./Register";
 
-import '../styles/App.min.css';
-import RecipeContextProvider from '../context/RecipeContext';
-import { LoginContext } from '../context/LoginContext';
-import ChatContextProvider from '../context/ChatContext';
+import "../styles/App.min.css";
+import RecipeContextProvider from "../context/RecipeContext";
+import { LoginContext } from "../context/LoginContext";
+import ChatContextProvider from "../context/ChatContext";
 
 function App() {
   const { isLoggedin } = useContext(LoginContext);
