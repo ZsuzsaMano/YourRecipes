@@ -1,7 +1,7 @@
-import React, { useEffect, useContext } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import apiKey from '../apiKey';
-import { RecipeContext } from '../context/RecipeContext';
+import React, { useEffect, useContext } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import apiKey from "../apiKey";
+import { RecipeContext } from "../context/RecipeContext";
 
 const Recipe = () => {
   const { ingredients, setIngredients, recipe, setRecipe } = useContext(
@@ -24,7 +24,7 @@ const Recipe = () => {
     };
 
     getRecipe();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const getIngredients = async () => {
@@ -36,7 +36,7 @@ const Recipe = () => {
     };
 
     getIngredients();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="displayedRecipe">
@@ -48,14 +48,14 @@ const Recipe = () => {
         <img src={recipe.image} alt={recipe.title} />
         <aside>
           <h4> Preparation Time: {recipe.readyInMinutes} min</h4>
-          {recipe.vegetarian ? 'vegetarian, ' : ''}
-          {recipe.vegan ? 'vegan, ' : ''}
-          {recipe.glutenFree ? 'gluten Free, ' : ''}
-          {recipe.dairyFree ? 'dairy Free, ' : ''}
-          {recipe.veryHealthy ? 'very Healthy, ' : ''}
-          {recipe.cheap ? 'cheap, ' : ''}
-          {recipe.veryPopular ? 'very Popular, ' : ''}
-          {recipe.sustainable ? 'sustainable, ' : ''}
+          {recipe.vegetarian ? "vegetarian, " : ""}
+          {recipe.vegan ? "vegan, " : ""}
+          {recipe.glutenFree ? "gluten Free, " : ""}
+          {recipe.dairyFree ? "dairy Free, " : ""}
+          {recipe.veryHealthy ? "very Healthy, " : ""}
+          {recipe.cheap ? "cheap, " : ""}
+          {recipe.veryPopular ? "very Popular, " : ""}
+          {recipe.sustainable ? "sustainable, " : ""}
 
           <h4> Servings: {recipe.servings} </h4>
         </aside>
@@ -64,12 +64,12 @@ const Recipe = () => {
         <div className="displayedRecipe__ingredients">
           <h3>Ingredients</h3>
           <ol className="displayedRecipe__ingredientlist">
-            {ingredients.map((ingredient) => (
+            {ingredients.map(ingredient => (
               <li key={ingredient.name}>
                 {ingredient.amount.metric.value +
-                  ' ' +
+                  " " +
                   ingredient.amount.metric.unit +
-                  ' ' +
+                  " " +
                   ingredient.name}
               </li>
             ))}

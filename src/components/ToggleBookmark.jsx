@@ -36,7 +36,7 @@ const ToggleBookmark = ({ id, title, image }) => {
     } else {
       toggleSelected(false);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (isLoggedin) {
     return (
@@ -49,11 +49,9 @@ const ToggleBookmark = ({ id, title, image }) => {
           }`}
           onClick={toggleBookmark}
           version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
           width="36"
           height="36"
           viewBox="0 0 475.82 442.01"
-          version="1.0"
         >
           <g id="layer1" transform="translate(-134.07 -225.8)">
             <path

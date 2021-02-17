@@ -62,7 +62,7 @@ const LoginContextProvider = props => {
         setUserId("");
       }
     });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setUser = user => {
     setIsLoggedIn(true);
@@ -101,7 +101,7 @@ const LoginContextProvider = props => {
 
   useEffect(() => {
     sendUserData();
-  }, [myBookmarkedRecipies]);
+  }, [myBookmarkedRecipies]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getMyBookmarkedRecipes = user => {
     db.collection("users")
