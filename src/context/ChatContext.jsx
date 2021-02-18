@@ -29,7 +29,7 @@ const ChatContextProvider = props => {
 
   return (
     <ChatContext.Provider
-      value={{ ref, messages, inputmessage, setInputmessage }}
+      value={{ ref, messages, loading, inputmessage, setInputmessage }}
     >
       {props.children}
     </ChatContext.Provider>
